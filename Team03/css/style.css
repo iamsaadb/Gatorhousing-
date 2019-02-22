@@ -55,6 +55,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   display: block; }
 .middle{
   text-align: center;
+  color:grey;
 }
 body {
   margin: 0;
@@ -7292,7 +7293,7 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #26baee; }
+  color: grey; }
   a:hover {
     text-decoration: none;
     color: #26baee; }
