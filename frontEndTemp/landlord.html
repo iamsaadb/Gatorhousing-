@@ -31,7 +31,7 @@
             #landlordOptions {
                 width: 100%;
                 height: 15%;
-                background-color: lightgray;
+                background-color: lightgoldenrodyellow;
             }
             #threeOptions {
                 float: left;
@@ -43,6 +43,14 @@
                 font-weight: bold;
 
                 
+            }
+            a {
+              text-align: center;
+
+            }
+            #newPropertyButton {
+              height: 10%;
+              font-weight: bold;
             }
         
         </style>
@@ -257,26 +265,43 @@
         </div>
       </div>
 
-  <!-- body -->
+  <!-- bodyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy -->
   <div id="middleSection">
         
     <div id="landlordOptions">
         <div id="threeOptions">
-            Landlord Name
+           <p style="text-align: center"> Landlord Name </p>
         </div>
         <div id="threeOptions">
-            <a href="">Messages</a>
+          <p style="text-align: center">  <a href="">Messages</a> </p>
         </div>
         <div id="threeOptions">
-            <a href="">Edit Account</a>
+          <p style="text-align: center">  <a href="">Edit Account</a> </p>
         </div>
-
     </div>
 
-  
-  </div>
+    <p id = "text"> Hello world!</p>
+    <button id = "newPropertyButton">New Property   <img src="plusSign.png" width="15%"></button>
+    <button onclick="addWord()">Word</button>
+
+    <input type=button onClick="location.href='landlordPost.html'" value='click here'>
+
+    <script type="text/javascript"> 
+      document.getElementById("newPropertyButton").onclick = function() {
+        document.getElementById("text").innerHTML = "Hello Ahmadddddd";
+      }
+    
+      function addWord() {
+  document.getElementById("text").innerHTML = document.getElementById("text").innerHTML + "word";
+      }
+
+
+    
+    </script>
+
+   </div>
   <!-- end body -->
-  <!-- footer -->
+  <!-- footer --> 
   <!-- connect -->
   <div class="container-fluid padding">
     <div class="row text-center padding">

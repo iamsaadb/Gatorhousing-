@@ -1,0 +1,38 @@
+{% extends "Header.html" %} {% block content %}
+
+<div class="container-fluid">
+  <div class="row" style="padding-top: 25px;">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 text-center">
+      <h2 style="background-color:gold; padding:5px; border-radius:15px">
+        Create Apartment or House Post
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Left Spacer -->
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4 col-sm-12">
+      <form
+        action=""
+        target="_blank"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <!-- title -->
+        <div class="form-group" style="margin-bottom: 0px">
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            placeholder="Post Apartment or House"
+            style="padding-left:5px"
+            required
+            pattern="[a-zA-Z0-9\s]+"
+          /><br />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
