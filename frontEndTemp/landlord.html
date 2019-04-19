@@ -280,15 +280,18 @@
         </div>
     </div>
 
-    <p id = "text"> Hello world!</p>
+   
     <button id = "newPropertyButton">New Property   <img src="plusSign.png" width="15%"></button>
-    <button onclick="addWord()">Word</button>
+    
 
+    <!--
     <input type=button onClick="location.href='landlordPost.html'" value='click here'>
+     -->
 
     <script type="text/javascript"> 
       document.getElementById("newPropertyButton").onclick = function() {
-        document.getElementById("text").innerHTML = "Hello Ahmadddddd";
+       
+        location.href='landlordPost.html';
       }
     
       function addWord() {

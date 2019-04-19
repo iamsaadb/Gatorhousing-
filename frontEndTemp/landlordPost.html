@@ -1,11 +1,9 @@
-{% extends "Header.html" %} {% block content %}
-
 <div class="container-fluid">
   <div class="row" style="padding-top: 25px;">
     <div class="col-md-4"></div>
     <div class="col-md-4 text-center">
       <h2 style="background-color:gold; padding:5px; border-radius:15px">
-        Create Apartment or House Post
+        Start Creating Apartment or House Post
       </h2>
     </div>
   </div>
@@ -26,13 +24,112 @@
             type="text"
             name="title"
             class="form-control"
-            placeholder="Post Apartment or House"
+            placeholder="Post Title"
             style="padding-left:5px"
             required
             pattern="[a-zA-Z0-9\s]+"
           /><br />
         </div>
+        <!-- Description Input: Item's condition, when it was bought, etc -->
+        <div class="form-group col-md-12" style="padding: 0px; margin: 0px">
+          <textarea
+            name="description"
+            placeholder="Description (Optional)"
+            class="form-control"
+            maxlength="200"
+            style="padding-left:5px; width:100%; height:100px ; resize:none;"
+          ></textarea
+          ><br />
+        </div>
+        <!-- bedrooms for the post -->
+        <div class="form-group col-md-12" style="padding:0px;margin-top:0px">
+          <label style="text-align: left; width:70px;"
+            >Number of Bedrooms:</label
+          >
+          <select class="form-control" name="category">
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+            <option value="four">4</option>
+            <option value="five">5</option>
+          </select>
+        </div>
+
+        <!-- bathrooms for the post -->
+        <div class="form-group col-md-12" style="padding:0px;margin-top:0px">
+          <label style="text-align: left; width:70px;"
+            >Number of Bathrooms:</label
+          >
+          <select class="form-control" name="category">
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+            <option value="four">4</option>
+            <option value="five">5</option>
+          </select>
+          <!-- Price Input -->
+        </div>
+        <div class="form-group col-md-6 " style="padding:0px; margin: 0px">
+          <input
+            type="number"
+            name="price"
+            class="form-control"
+            placeholder="Price per Month"
+            style="padding-left:5px"
+            size="48"
+            required
+          /><br />
+        </div>
+
+        <!-- Uploading image -->
+        <div class="form-group col-md-6" style="padding:0px;margin:0px">
+          <input
+            class="form-control-file"
+            aria-describedby="fileHelp"
+            style="width:100%;margin-left:0px;"
+            type="file"
+            name="img"
+          />
+          <small
+            id="fileHelp"
+            style="text-align: right"
+            class="form-text text-muted"
+            >Click 'Choose File' to upload photos</small
+          >
+        </div>
+        <div class="col-md-12">
+          <h5>
+            Note: Will take at least 24 hours for post to get approved
+          </h5>
+        </div>
+        <!-- submit button -->
+        <!-- Will need to code in mandatory fields and reject from going to the next page if fields not completed-->
+        <div
+          class="col-md-6"
+          style="margin-bottom: 20px;padding:5px;margin-top: 0px"
+        >
+          <button
+            type="submit"
+            class="btn form-control"
+            style="background-color:#4C57F6; width: 100%;min-width:100px; color:white"
+          >
+            Create Post
+          </button>
+        </div>
+        <div class="col-md-6" style="padding: 5px; margin-top: 0px ">
+          <button
+            type="button"
+            onclick="location.href='landlord.html';"
+            class="btn form-control"
+            style="background-color:#4C57F6; width: 100%;min-width:100px;color:white"
+          >
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
+
+    <!-- Right Spacer -->
+    <div class="col-md-2"></div>
   </div>
 </div>
