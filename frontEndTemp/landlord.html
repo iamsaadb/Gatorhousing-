@@ -44,15 +44,39 @@
 
                 
             }
-            a {
-              text-align: center;
-
-            }
+            
             #newPropertyButton {
               height: 10%;
               font-weight: bold;
             }
-        
+
+            #navb {
+              height: 75px;
+              margin-bottom: 75px;
+              
+            }
+
+            #landlordName {
+              margin-right: 180px;
+              font-weight: bolder;
+              text-decoration: underline;
+            }
+
+           
+
+            #messages {
+              margin-right: 180px;
+              font-size: 20px;
+              font-weight: bolder;
+            
+            }
+            
+            #editAccount {
+              font-size: 20px;
+              font-weight: bolder;
+              
+            }
+           
         </style>
 
 
@@ -266,27 +290,39 @@
       </div>
 
   <!-- bodyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy -->
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navb">
+    <h1 id="landlordName">Landlord Name </h1>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="messages">Messages </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="editAccount">Edit Account</a>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </nav>
+
   <div id="middleSection">
         
-    <div id="landlordOptions">
-        <div id="threeOptions">
-           <p style="text-align: center"> Landlord Name </p>
-        </div>
-        <div id="threeOptions">
-          <p style="text-align: center">  <a href="">Messages</a> </p>
-        </div>
-        <div id="threeOptions">
-          <p style="text-align: center">  <a href="">Edit Account</a> </p>
-        </div>
-    </div>
-
+   
    
     <button id = "newPropertyButton">New Property   <img src="plusSign.png" width="15%"></button>
     
 
     <!--
     <input type=button onClick="location.href='landlordPost.html'" value='click here'>
-     -->
+    -->
 
     <script type="text/javascript"> 
       document.getElementById("newPropertyButton").onclick = function() {
@@ -303,6 +339,9 @@
     </script>
 
    </div>
+
+  
+
   <!-- end body -->
   <!-- footer --> 
   <!-- connect -->
