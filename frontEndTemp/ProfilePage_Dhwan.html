@@ -20,9 +20,21 @@
 
     <link rel="stylesheet" href="css/main.css" />
 
-    <title>Landlord Page</title>
+    <title>Profile Page</title>
 
         <style type="text/css">
+
+            #profilePage, img {
+             height: 391px;
+             float : left;
+            }
+
+            .profileInformation {
+              margin-top: 6%;
+              float: right;
+              margin-right: 15%;
+              font-size: 22px;
+            }
 
             #middleSection {
                 width: 100%;
@@ -294,52 +306,65 @@
   <!-- end body -->
   <!-- footer --> 
   <!-- connect -->
-  <div class="container-fluid padding">
-    <div class="row text-center padding">
-      <div class="col-12">
-        <h2>Connect</h2>
+  <div className = 'profilePage'>
+      <img src='./img/Profile_Page.jpg' alt = 'profilePage'>
+      <div class="profileInformation">   
+        <form>
+          <table>
+                  <tr>
+                    <td>
+                      Name:
+                    </td>
+                    <td>
+                      <input type="text" placeholder="Name" name="">
+                      <input type="button" value="Edit"onClick="edit()">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Password:
+                    </td>
+                    <td>
+                      <input type="Password" placeholder="Password" name="">
+                      <input type="button" value="Edit"onClick="edit()">
+                    </td>
+                  </tr> 
+                  <tr>
+                    <td>
+                      Email:
+                    </td>
+                    <td>
+                      <input type="mail" placeholder="Email" name="">
+                      <input type="button" value="Edit"onClick="edit()">
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Contact no:
+                    </td>
+                    <td>
+                      <select>
+                        <option>415</option>
+                        <option>650</option>
+                        <option>628</option>
+                      </select>
+                      <input type="Contact no" placeholder="XXX-XXXX" name="">
+                      <input type="button" value="Edit"onClick="edit()">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="Submit" value="Submit" name="">
+                  </td>
+                </tr>
+          </table>
+        </form>
       </div>
-      <div class="col-12 social padding">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-    </div>
-    
-    <footer>
-      <div class ="container-fluid padding">
-      <div class="row text-center">
-        <div class="col-md-4">
-          <hr class = "light">
-          <p>5555-555</p>
-          <p>email@gmail.com</p>
-          <p>1200 Holway strat</p>
-          <p>San Francsco, Ca</p>
-        </div>
-        <div class="col-md-4">
-          <hr class="light">
-          <h5>Our hours</h5>
-          <hr class="light">
-          <p>Monday: 9am - 5pm</p>
-          <p>Satarday: closed</p>
+      
+  </div>
 
-        </div>
-        <div class="col-md-4">
-            <hr class="light">
-            <h5>Our hours</h5>
-            <hr class="light">
-            <p>Monday: 9am - 5pm</p>
-            <p>Satarday: closed</p>
-
-          </div>
-        <div class="col-12">
-          <hr class="light">
-          <h5>&comp: W3oajfooasj@jdosajo</h5>
-        </div>
-      </div>
-      </div>
-    </footer>
+  
     <!-- footer-end -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
