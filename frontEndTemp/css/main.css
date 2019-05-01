@@ -46,7 +46,7 @@ input[type="password"]:focus {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset !important;
   outline: none !important; }
 
-.navbar {
+.navbar,text {
   border-bottom: #008ed6 3px solid;
   opacity: 0.8;
   position: relative; }
@@ -132,7 +132,7 @@ input[type="password"]:focus {
 .updated{
   background-color: #f6f6f6;
   border-radius: 5px;
-  
+
 }
 
 .social a{
@@ -167,6 +167,25 @@ hr.light{
   width: 100%;
   height: 100%;
 }
+.carousel-caption{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+.carousel-caption h1{
+  font-size: 500%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 10px #000;
+  background-color: black;
+  opacity: 1;
+}
+.carousel-caption h1{
+  font-size: 200%;
+  font-weight: 500;
+  text-shadow: 1px 1px 10px #000;
+}
+
+
 
 .media .fav-box {
   position: absolute;
@@ -183,13 +202,13 @@ hr.light{
     .myform{
       display: flex;
       margin-left: 300px;
-    
+
     }
     /* .nav-link{
-     padding-left: 40px 
-    
+     padding-left: 40px
+
     } */
-    
+
     /* .topnav-centered {
       float: none;
       position: absolute;
@@ -206,7 +225,224 @@ hr.light{
       .myform{
         display: flex;
         margin-left: 0;
-      
+
       }
 
     }
+/* new page */
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+/* Column container */
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+/* .side {
+  -ms-flex: 10%; 
+  flex: 10%;
+  background-color:blue;
+  padding: 20px;
+} */
+
+/* Main column */
+.main {
+  -ms-flex: 70%; /* IE10 */
+  flex: 100%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1200px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+
+/* scroll page */
+.scroll-top {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+input[type=number] {
+    height: 30px;
+}
+
+input[type=number]:hover::-webkit-inner-spin-button {
+    width: 14px;
+    height: 30px;
+}
+
+/* input */
+.quantity {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 80px;
+  height: 42px;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  /* padding: 0;
+  margin: 0; */
+  padding-left: 20px;
+  border: 1px solid #eee;
+}
+.quantity-input input{
+  width: 80px;
+  height: 42px;
+
+}
+.min{
+  margin-right: 10px;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 42px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  width: 20px;
+  text-align: center;
+  color: #333;
+  font-size: 13px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+  color:white;
+  background: black;
+  font-weight: bolder;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
+  color:white;
+  background:black;
+  font-weight: bolder;
+}
+/* input end */
+
+
+.input1 {
+  float: left;
+  height: 42px;
+  margin-right: 0px;
+}
+.input2 {
+  margin-left: 0px;
+  display: block;
+  overflow: hidden;
+  padding: 0 4px 0 6px
+}
+.fakeimg.img{
+  height: 100%;
+  width:10%;
+}
+.left-div{
+  width: 30%;
+  height: 100vh;
+  float: left;
+}
+.right-div{
+  width: 70%;
+  height: 100vh;
+  float: left;
+}
+/*  card bottom margin*/
+.spacing{
+    margin-bottom: 30px;
+
+}
+.spacing.img{
+  height: 50%;
+}
+.nav-top{
+  margin-top: 65px;
+}
+
+
+/* #wrapper{
+  min-width: 200px;
+} */
+@media (max-width:770px){
+  .side{
+    margin-top: 90px;
+    padding-right: 50%;
+    
+  }
+}
+/* @media (max-width:1225px){
+  .side{
+    width: 100%;
+  
+  }
+} */
+

@@ -29,7 +29,20 @@
         margin-bottom: 75px;
       }
       #jumbo {
-        background-color: lightgray;
+        background-color: gray;
+        text-align: center;
+        color: white;
+      }
+      #note {
+        font-size: 20px;
+      }
+      #bedroomBathroom {
+        padding: 0px;
+        margin-top: 0px;
+        width: 10%;
+      }
+      #pricePerMonthDiv {
+        width: 15%;
       }
     </style>
   </head>
@@ -37,12 +50,12 @@
     <div class="container">
       <!--jumbotron div-->
       <div class="jumbotron" id="jumbo">
-        <h1 class="display-4">Start Post (Apartment or House)</h1>
+        <h1 class="display-4">Post</h1>
 
         <hr class="my-4" />
 
-        <p>
-          Note: Will take at least 24 hours for post to get approved
+        <p id="note">
+          Note: It will take at least 24 hours for Post to get approved.
         </p>
       </div>
       <!--post-->
@@ -55,17 +68,16 @@
             placeholder="Post Title"
           />
         </fieldset>
-
-        <div class="form-group">
-          <textarea
+        <fieldset class="form-group">
+          <input
             class="form-control"
-            name="description"
-            placeholder="Description (Optional)"
-            rows="7"
-          ></textarea>
-        </div>
+            type="text"
+            name="postAddress"
+            placeholder="Address"
+          />
+        </fieldset>
 
-        <div class="form-group col-md-12" style="padding:0px;margin-top:0px">
+        <div class="form-group col-md-12" id="bedroomBathroom">
           <label>Number of Bedrooms:</label>
           <select class="form-control" name="category">
             <option value="one">1</option>
@@ -76,7 +88,7 @@
           </select>
         </div>
 
-        <div class="form-group col-md-12" style="padding:0px;margin-top:0px">
+        <div class="form-group col-md-12" id="bedroomBathroom">
           <label>Number of Bathrooms:</label>
           <select class="form-control" name="category">
             <option value="one">1</option>
@@ -87,7 +99,7 @@
           </select>
         </div>
 
-        <div class="form-row">
+        <div class="form-row" id="pricePerMonthDiv">
           <label for="c2">Price per Month</label>
           <div class="input-group">
             <span class="input-group-addon">$</span>
@@ -117,6 +129,14 @@
           />
         </div>
 
+        <div class="form-group">
+          <textarea
+            class="form-control"
+            name="description"
+            placeholder="Description (Optional)"
+            rows="7"
+          ></textarea>
+        </div>
         <button
           type="submit"
           class="btn btn-primary btn-lg btn-block"

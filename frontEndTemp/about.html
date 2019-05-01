@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css">
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+ 
+
+  <link rel="stylesheet" href="css/main.css" />
+    <title>Card Layout Component</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+      
+</head>
+
+<body>
+        <div class=" bg-dark text-white" >
+                <p  class="text-center">SFSU CSC648-01 Software Engineering Spring 2019 class Project </p>
+              </div>
+              <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top py-2">
+                
+                  <a class="navbar-brand" href="#">
+                    <h1>Gator-Housing</h1>
+                  </a>
+                  <div class="myform">
+                    <form class="form-inline my-2  d-flex">
+                        <div class="nav-item dropdown updated">
+                            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              All
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="#">All</a>
+                              <a class="dropdown-item" href="#">House</a>
+                              <a class="dropdown-item" href="#">Condo</a>
+                              <a class="dropdown-item" href="#">Apartments</a>
+                            </div>
+                          </div>
+                        
+                      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success ui inverted violet button d-flex" type="submit">Search</button>
+                    </form>
+                </div>
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  
+                  <div class="collapse navbar-collapse" id="navbarResponsive">
+                      
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item active">
+                          <a class="ui inverted violet button d-flex" href="index.html">
+                                <i class="home icon"></i>
+                                Home
+                            </a>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          class=" ui inverted purple button d-flex"
+                          href="registration.html"
+                          data-toggle="modal"
+                          data-target="#exampleModal"
+                          
+                          >
+                          <i class="add user icon" ></i>
+                          Sign In</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+            
+              </nav>
+          
+              <!-- Sign In-->
+          
+          
+               <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+          
+                      <form class="ui form">
+                        <div class="field">
+                          <label>E-Mail Address</label>
+                          <input type="email" name="email" placeholder="E-Mail Address" />
+                        </div>
+                        <div class="field">
+                          <label>Password</label>
+                          <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter Password"
+                          />
+                        </div>
+                        <button class="ui blue button" type="submit">Sign In</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      Don't Have an Account ?
+                      </button>
+                      <a href="#"  data-toggle="modal"
+                      data-target="#exampleModal2" data-dismiss="modal" aria-label="Close">Sign Up</a>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+          
+          
+              <!-- sign up modal  -->
+          
+               <div class="modal fade " id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                       
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="card bg-light">
+                              <article class="card-body mx-auto" style="max-width: 400px;">
+          
+                                <form>
+                                <div class="form-group input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                   </div>
+                                      <input name="" class="form-control" placeholder="Full name" type="text">
+                                  </div> 
+                                  
+                                  <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                   </div>
+                                      <input name="" class="form-control" placeholder="Email address" type="email">
+                                  </div> 
+                                  <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                                  </div>
+                                  <select class="custom-select" style="max-width: 80px;">
+                                      <option selected="">+1</option>
+                                      <option value="1">+972</option>
+                                      <option value="2">+198</option>
+                                      <option value="3">+701</option>
+                                  </select>
+                                    <input name="" class="form-control" placeholder="Phone number" type="text">
+                                  </div>
+                                  <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                                  </div>
+                                  <select class="form-control">
+                                    <option selected=""> Sign up as</option>
+                                    <option>Landlord</option>
+                                    <option>Student</option>
+                                  </select>
+                                </div> 
+                                  <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                  </div>
+                                      <input class="form-control" placeholder="Create password" type="password">
+                                  </div> 
+                                  <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                  </div>
+                                      <input class="form-control" placeholder="Repeat password" type="password">
+                                  </div>                                      
+                                  <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+                                  </div>    
+                                  <p class="text-center">Have an account? <a href=""  data-toggle="modal"
+                                    data-target="#exampleModal" data-dismiss="modal" aria-label="Close">Log In</a> </p>                                                                 
+                              </form>
+                              </article>
+                              </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          
+    <!-- main page -->
+    <div class="main">
+        <div class="container text-muted">
+
+            <!-- cards -->
+
+            <div class="row">
+                <div class="col-md-12 col-lg-6 spacing">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="img/Dhwan.PNG">
+                            <div class="card-block">
+                                <div class="list">Team Leader</div>
+                                
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#dwhan">
+                                    Launch demo modal
+                                </button>
+
+                                <!-- Modal -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 spacing">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="img/Saad.jpg">
+                            <div class="card-block">
+                                <div class="list">Back-End Team-leader </div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#saad">
+                                    Launch demo modal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 spacing">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="img/Rajvi.jpg">
+                            <div class="card-block">
+                                <div class="list">Back-End Team</div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rajvi">
+                                    Launch demo modal
+                                  </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 spacing">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="img/staff-3.jpg">
+                            <div class="card-block">
+                                <div class="list">Back-End Team</div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mubark">
+                                    Launch demo modal
+                                  </button>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 spacing">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="img/Dawit.jpg">
+                            <div class="card-block">
+                                <div class="list">Front-End Team leader </div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dawit">
+                                    Launch demo modal
+                                  </button>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-6 spacing">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="img/ahmad.jpg">
+                            <div class="card-block">
+                                <div class="list">GitHub Master </div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ahmad">
+                                    Launch demo modal
+                                  </button>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 spacing">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid" src="img/image_6.jpg">
+                            <div class="card-block">
+                                <div class="list">Front-End Team </div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#aya">
+                                    Launch demo modal
+                                  </button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- navs -->
+
+
+
+
+        </div><!-- end .container -->
+    </div>
+
+    <div class="modal fade" id="dwhan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>When modals become too long for the user’s viewport or device, they scroll independent of the
+                        page itself. Try the demo below to see what we mean.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="dawit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>When modals become too long for the user’s viewport or device, they scroll independent of the
+                    page itself. Try the demo below to see what we mean.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="modal fade" id="rajvi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>tttWhen modals become too long for the user’s viewport or device, they scroll independent of the
+                    page itself. Try the demo below to see what we mean.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ahmad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>tttWhen modals become too long for the user’s viewport or device, they scroll independent of the
+                page itself. Try the demo below to see what we mean.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="mubark" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>tttWhen modals become too long for the user’s viewport or device, they scroll independent of the
+                page itself. Try the demo below to see what we mean.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="aya" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>tttWhen modals become too long for the user’s viewport or device, they scroll independent of the
+                page itself. Try the demo below to see what we mean.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="rajvi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>tttWhen modals become too long for the user’s viewport or device, they scroll independent of the
+                page itself. Try the demo below to see what we mean.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+</div>
+</div>
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <footer>
+            <div class ="container-fluid padding">
+            <div class="row text-center">
+              <div class="col-md-4">
+                <hr class = "light">
+                <p>Contact us</p>
+                <p>email@gmail.com</p>
+                <p>(415)-123-4567</p>
+               
+              </div>
+              <div class="col-md-4">
+                <hr class="light">
+                <h5>Our hours</h5>
+                <hr class="light">
+                <p>Monday: 9am - 5pm</p>
+                <p>Satarday: closed</p>
+      
+              </div>
+              <div class="col-md-4">
+                  <hr class="light">
+                  <h5>Our Location</h5>
+                  <hr class="light">
+                  <p>1200 Holway strat</p>
+                  <p>San Francsco, Ca</p>
+      
+                </div>
+              <div class="col-12">
+                <hr class="light">
+                <h5>gater-housing@mail.sfsu.edu</h5>
+              </div>
+            </div>
+            </div>
+          </footer>
+</body>
+
+</html>

@@ -43,7 +43,8 @@
       #messageList {
         width: 100%;
         height: 100%;
-        background-color: lightblue;
+        background-color: lightgray;
+
         display: none;
       }
     </style>
@@ -69,52 +70,36 @@
 
     <div class="container" id="messageList">
       <h2>Below you can see all messages</h2>
-      <ul class="list-group">
-        <li class="list-group-item">
-          From: Username <br />
-          Message: Hey I saw your post on Gator Housing and am interested.
-        </li>
-        <li class="list-group-item">
-          From: Username <br />
-          Message:
-        </li>
-        <li class="list-group-item">
-          From: Username <br />
-          Message:
-        </li>
-        <li class="list-group-item">
-          From: Username <br />
-          Message:
-        </li>
-        <li class="list-group-item">
-          From: Username <br />
-          Message:
-        </li>
-        <li class="list-group-item">
-          From: Username <br />
-          Message:
-        </li>
-        <li class="list-group-item">
-          From: Username <br />
-          Message:
-        </li>
-        <li class="list-group-item">
-          From: Username <br />
-          Message:
-        </li>
-        <li class="list-group-item">
-          From: Username <br />
-          Message:
-        </li>
-        <li class="list-group-item">
-          From: Username <br />
-          Message:
-        </li>
-        <li class="list-group-item">
-          From: Username <br />
-          Message:
-        </li>
-      </ul>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">From: (name of UserName)</th>
+            <th scope="col">Responding to: (Post title)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ahmad Rangeen</td>
+            <td>whatever post title is...</td>
+          </tr>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Message:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  Hello, Im interested in leasing your apartment that you posted
+                  on GatorHousing
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </tbody>
+      </table>
     </div>
 
     <script type="text/javascript">
