@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -256,7 +257,7 @@
   				
   			</div> <!-- cd-tab-filter -->
   		</div> <!-- cd-tab-filter-wrapper -->
-
+      
   		<section class="cd-gallery">
   			<ul>
   				<li class="mix ">
@@ -267,7 +268,7 @@
                         <div class="list"><i class="fas fa-dollar-sign"></i> Price</div>
                         <div class="list"><i class="fas fa-bed"></i> Bed Room</div>
                         <div class="list"><i class="fas fa-toilet"></i> Bath Room</div>
-                        <div class="text-center"><button type="button" class="btn btn-primary  btn-md">Contact Landlord</button></div> 
+                        <div class="text-center"><button type="button" class="btn btn-primary  btn-md" onclick="openForm()">Contact Landlord</button></div> 
                     </div>
           </li>
           <li class="mix color-2 check2 radio2 option2">
@@ -437,7 +438,32 @@
         </div>
       </footer>
 <!-- footer end -->
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+<!--Javascript code to contact landlord-->
+<script>
+  function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+  </script>
 <!-- jquary -->
+
 <script
 src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

@@ -24,9 +24,16 @@
 
       #submit {
         margin-top: 7px;
+        width: 15%;
+        display: inline-block;
       }
       #cancel {
-        margin-bottom: 75px;
+        margin-top: 7px;
+        width: 15%;
+        display: inline-block;
+      }
+      #submitAndCancel {
+        text-align: center;
       }
       #jumbo {
         background-color: gray;
@@ -137,21 +144,25 @@
             rows="7"
           ></textarea>
         </div>
-        <button
-          type="submit"
-          class="btn btn-primary btn-lg btn-block"
-          id="submit"
-        >
-          Submit
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary btn-lg btn-block"
-          id="cancel"
-          onclick="location.href='landlord.html';"
-        >
-          Cancel
-        </button>
+
+        <div id="submitAndCancel">
+          <button
+            type="submit"
+            class="btn btn-primary btn-lg btn-block"
+            id="submit"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary btn-lg btn-block"
+            id="cancel"
+            onclick="location.href='landlord.html';"
+          >
+            Cancel
+          </button>
+          >
+        </div>
       </form>
     </div>
     <!-- Optional JavaScript -->

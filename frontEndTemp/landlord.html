@@ -74,52 +74,72 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top py-2">
-      
-        <a class="navbar-brand" href="#">
-          <h1>Gator-Housing</h1>
-        </a>
-        <div class="myform">
-          <form class="form-inline my-2  d-flex">
-              <div class="nav-item dropdown updated">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    All
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </div>
-              
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-      </div>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="ui inverted violet button d-flex" href="index.html">
-                    <i class="home icon"></i>
-                    Home
-                  </a>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top py-2">
+    <!-- <img src="./img/GatorLogo.PNG" alt="Logo"> -->
+    <a class="navbar-brand" href="#">
+      <h1>GatorHousing</h1>
+    </a>
+    <div class="myform" style="margin-left:30px;">
+      <form class="form-inline my-2  d-flex">
+          <div class="nav-item dropdown updated" style="border-radius:15px; margin: 2px;">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All
               </a>
-            </li>
-            <li class="nav-item">
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="margin:5px; width:394px;">
+        <button class="btn btn-outline-success" type="submit" style="color:white">Search</button>
+      </form>
+  </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        
+      <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item active">
+              <a class="ui inverted violet button d-flex" href="#">
+                  <i class="home icon"></i>
+                  Post
+                </a>
+            </a>
+          </li>
+          <li class="nav-item active">
+              <a class="ui inverted violet button d-flex" href="#">
+                  <i class="home icon"></i>
+                  About
+                </a>
+            </a>
+          </li>
+
+        <li class="nav-item active">
+            <a class="ui inverted violet button d-flex" href="#">
+                <i class="home icon"></i>
+                Home
+              </a>
+          </a>
+        </li>
+       
+      </ul>
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
               <a
                 class=" ui inverted purple button d-flex"
                 href="registration.html"
@@ -128,157 +148,149 @@
                 
                 >
                 <i class="add user icon" ></i>
-                Sign In</a
-              >
+                Sign In</a>
             </li>
-          </ul>
-        </div>
-  
-    </nav>
+      </ul>
+    </div>
 
-    <!-- Modal -->
+</nav>
+
+<!-- Modal -->
 
 
-     <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+ <div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="ui form">
+          <div class="field">
+            <label>E-Mail Address</label>
+            <input type="email" name="email" placeholder="E-Mail Address" />
           </div>
-          <div class="modal-body">
-              <p>
-                  <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-                  <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-                </p>
-                <p class="divider-text  tex-center">
-                      <span class="bg-light">OR</span>
+          <div class="field">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+            />
+          </div>
+          <button class="ui blue button" type="submit">Sign In</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        Don't Have an Account ?
+        </button>
+        <a href="#"  data-toggle="modal"
+        data-target="#exampleModal2" data-dismiss="modal" aria-label="Close">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<!-- sign up modal  -->
+
+ <div class="modal fade " id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="card bg-light">
+                <article class="card-body mx-auto" style="max-width: 400px;">
+                  <h4 class="card-title mt-3 text-center">Create Account</h4>
+                  <p class="text-center">Get started with your free account</p>
+                  <p>
+                    <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+                    <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
                   </p>
-            <form class="ui form">
-              <div class="field">
-                <label>E-Mail Address</label>
-                <input type="email" name="email" placeholder="E-Mail Address" />
-              </div>
-              <div class="field">
-                <label>Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Enter Password"
-                />
-              </div>
-              <button class="ui blue button" type="submit">Sign In</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            Don't Have an Account ?
-            </button>
-            <a href="#"  data-toggle="modal"
-            data-target="#exampleModal2" data-dismiss="modal" aria-label="Close">Sign Up</a>
-          </div>
-        </div>
-      </div>
-    </div> 
-
-
-    <!-- sign up modal  -->
-
-     <div class="modal fade " id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-             
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <div class="card bg-light">
-                    <article class="card-body mx-auto" style="max-width: 400px;">
-                      <h4 class="card-title mt-3 text-center">Create Account</h4>
-                      <p class="text-center">Get started with your free account</p>
-                      <p>
-                        <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-                        <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-                      </p>
-                      <p class="divider-text  tex-center">
-                            <span class="bg-light">OR</span>
-                        </p>
-                      <form>
-                      <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                         </div>
-                            <input name="" class="form-control" placeholder="Full name" type="text">
-                        </div> 
-                        
-                        <div class="form-group input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                         </div>
-                            <input name="" class="form-control" placeholder="Email address" type="email">
-                        </div> 
-                        <div class="form-group input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-                        </div>
-                        <select class="custom-select" style="max-width: 120px;">
-                            <option selected="">+1</option>
-                            <option value="1">+972</option>
-                            <option value="2">+198</option>
-                            <option value="3">+701</option>
-                        </select>
-                          <input name="" class="form-control" placeholder="Phone number" type="text">
-                        </div>
-                        <div class="form-group input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-                        </div>
-                        <select class="form-control">
-                          <option selected=""> Sign up as</option>
-                          <option>Home owner</option>
-                          <option>Manager</option>
-                          <option>Renter</option>
-                        </select>
-                      </div> 
-                        <div class="form-group input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                        </div>
-                            <input class="form-control" placeholder="Create password" type="password">
-                        </div> 
-                        <div class="form-group input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                        </div>
-                            <input class="form-control" placeholder="Repeat password" type="password">
-                        </div>                                      
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
-                        </div>    
-                        <p class="text-center">Have an account? <a href=""  data-toggle="modal"
-                          data-target="#exampleModal" data-dismiss="modal" aria-label="Close">Log In</a> </p>                                                                 
-                    </form>
-                    </article>
+                  <p class="divider-text  tex-center">
+                        <span class="bg-light">OR</span>
+                    </p>
+                  <form>
+                  <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                     </div>
+                        <input name="" class="form-control" placeholder="Full name" type="text">
+                    </div> 
+                    
+                    <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                     </div>
+                        <input name="" class="form-control" placeholder="Email address" type="email">
+                    </div> 
+                    <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                     </div>
-            </div>
-          </div>
+                    <select class="custom-select" style="max-width: 120px;">
+                        <option selected="">+1</option>
+                        <option value="1">+972</option>
+                        <option value="2">+198</option>
+                        <option value="3">+701</option>
+                    </select>
+                      <input name="" class="form-control" placeholder="Phone number" type="text">
+                    </div>
+                    <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                    </div>
+                    <select class="form-control">
+                      <option selected=""> Sign up as</option>
+                      <option>Home owner</option>
+                      <option>Manager</option>
+                      <option>Renter</option>
+                    </select>
+                  </div> 
+                    <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                        <input class="form-control" placeholder="Create password" type="password">
+                    </div> 
+                    <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                        <input class="form-control" placeholder="Repeat password" type="password">
+                    </div>                                      
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+                    </div>    
+                    <p class="text-center">Have an account? <a href=""  data-toggle="modal"
+                      data-target="#exampleModal" data-dismiss="modal" aria-label="Close">Log In</a> </p>                                                                 
+                </form>
+                </article>
+                </div>
         </div>
       </div>
+    </div>
+  </div>
 
   <!-- bodyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy -->
   
@@ -349,48 +361,33 @@
   <!-- end body -->
   <!-- footer --> 
   <!-- connect -->
-  <div class="container-fluid padding">
-    <div class="row text-center padding">
-      <div class="col-12">
-        <h2>Connect</h2>
-      </div>
-      <div class="col-12 social padding">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-    </div>
-    
-    <footer>
+  <footer>
       <div class ="container-fluid padding">
       <div class="row text-center">
         <div class="col-md-4">
           <hr class = "light">
-          <p>5555-555</p>
+          <h5>Contact Information</h5>
+          <hr class="light">
           <p>email@gmail.com</p>
-          <p>1200 Holway strat</p>
-          <p>San Francsco, Ca</p>
+          <p>Ph: XXX-XXXX</p>
         </div>
         <div class="col-md-4">
           <hr class="light">
-          <h5>Our hours</h5>
+          <h5>Our Office Hours</h5>
           <hr class="light">
-          <p>Monday: 9am - 5pm</p>
-          <p>Satarday: closed</p>
+          <p>Monday-Friday </p>
+          <p>9am - 5pm</p>
 
         </div>
         <div class="col-md-4">
             <hr class="light">
-            <h5>Our hours</h5>
+            <h5>Our Office Address</h5>
             <hr class="light">
-            <p>Monday: 9am - 5pm</p>
-            <p>Satarday: closed</p>
-
+            <p>1200 ABC Street</p>
+            <p>San Francisco, CA</p>
           </div>
         <div class="col-12">
           <hr class="light">
-          <h5>&comp: W3oajfooasj@jdosajo</h5>
         </div>
       </div>
       </div>
