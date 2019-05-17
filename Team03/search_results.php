@@ -128,4 +128,3 @@
 
         $conn->close();
         print_r($_SESSION['data']);
-        ?>

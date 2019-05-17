@@ -22,15 +22,15 @@
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top py-2">
-  <a class="navbar-brand" href="index.php">
-    <img src="./img/logo.png" height="100px" width="150px" alt="Logo">
+    <a class="navbar-brand" href="index.php">
+      <img src="./img/logo.png" height="100px" width="150px" alt="Logo">
     </a>
     <div class="myform" style="margin-left:200px;">
-    <form id="search_form" class="form-inline my-2  d-flex" method="POST" action="filter.php">
+      <form id="search_form" class="form-inline my-2  d-flex" method="POST" action="filter.php">
         <select name="select" class="form-control" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <?php
-          $search=$_POST['search'];
-          $select=$_POST['select'];
+          $search = $_POST['search'];
+          $select = $_POST['select'];
           echo '<h2> SEARCH RESULTS</h2>';
           ?>
           <option class="dropdown-item" value="All">All</option>
@@ -40,8 +40,8 @@
           <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Studio") echo 'Selected'; ?> value="Studio">Studio</option>
         </select>
 
-        <input class="form-control" name ="search" type="search" placeholder="Search" value= "<?php echo $search; ?>" aria-label="Search" style="margin:5px; width:200px;">
-        <button class="btn btn-outline-success" name= "submit" type="submit" style="color:white">Search</button>
+        <input class="form-control" name="search" type="search" placeholder="Search" value="<?php echo $search; ?>" aria-label="Search" style="margin:5px; width:200px;">
+        <button class="ui inverted violet button d-flex" name="submit" type="submit" style="color:white">Search</button>
       </form>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +51,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
 
       <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
+        <li class="nav-item active">
           <a class="ui inverted violet button d-flex" href="about.php">
             <i class=""></i>
             About
@@ -205,32 +205,32 @@
   </div>
 
   <h5 name="filter" style="width: fit-content; margin-top: 1%;
-     margin-left: 45%;"><u>FILTERS</u></h5>
+     margin-left: 45%;"><u>Filter by: </u></h5>
 
- <div name="filter" style="width: fit-content; margin-top: 1%;
+  <div name="filter" style="width: fit-content; margin-top: 1%;
      margin-left: 30%;">
-       <form id ="filter_form" class="form-inline ml-3" method="POST" action="filtered_results.php">
+    <form id="filter_form" class="form-inline ml-3" method="POST" action="filtered_results.php">
 
-              <div class="d-inline">
-                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Price</label>
-                  <select name="price_range" class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
-                 <?php
-                 $price_range = $_POST['price_range'];
-                  echo '<h2> SEARCH RESULTS</h2>';
-                 ?>
-                    <option <?php if ($price_range == "Any") echo 'Selected'; ?> value="Any">Any</option>
-                    <option <?php if ($price_range == "Less than $1000") echo 'Selected'; ?> value="Less than $1000"> Less than $1000</option>
-                    <option <?php if ($price_range == "Between $1000 and $2000") echo 'Selected'; ?> value="Between $1000 and $2000"> Between $1000 and $2000</option>
-                    <option <?php if ($price_range == "Between $2000 and $3000") echo 'Selected'; ?> value="Between $2000 and $3000" >Between $2000 and $3000</option>
-                    <option <?php if ($price_range == "Between $3000 and $4000") echo 'Selected'; ?> value="Between $3000 and $4000"> Between $3000 and $4000</option>
-                    <option <?php if ($price_range == "More than $4000") echo 'Selected'; ?> value="More than $4000"> More than $4000</option>
-                  </select>
-              <button type="submit" name ="submit_filter" class="btn btn-primary my-1 mx-auto">Submit</button>
+      <div class="d-inline">
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Price</label>
+        <select name="price_range" class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
+          <?php
+          $price_range = $_POST['price_range'];
+          echo '<h2> SEARCH RESULTS</h2>';
+          ?>
+          <option <?php if ($price_range == "Any") echo 'Selected'; ?> value="Any">Any</option>
+          <option <?php if ($price_range == "Less than $1000") echo 'Selected'; ?> value="Less than $1000"> Less than $1000</option>
+          <option <?php if ($price_range == "Between $1000 and $2000") echo 'Selected'; ?> value="Between $1000 and $2000"> Between $1000 and $2000</option>
+          <option <?php if ($price_range == "Between $2000 and $3000") echo 'Selected'; ?> value="Between $2000 and $3000">Between $2000 and $3000</option>
+          <option <?php if ($price_range == "Between $3000 and $4000") echo 'Selected'; ?> value="Between $3000 and $4000"> Between $3000 and $4000</option>
+          <option <?php if ($price_range == "More than $4000") echo 'Selected'; ?> value="More than $4000"> More than $4000</option>
+        </select>
+        <button type="submit" name="submit_filter" class="btn btn-primary my-1 mx-auto">Submit</button>
 
-             </div>
-      </form>
-     
-              <!-- <div class="d-inline">
+      </div>
+    </form>
+
+    <!-- <div class="d-inline">
                   <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Bed</label>
                   <select class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
                   <option value="0">Any</option>
@@ -259,14 +259,14 @@
                     <option value="3">Between 3 mi and 5 mi</option>
                     <option value="5">More than 5 mi</option>
                   </select> -->
-             
-</div> 
-<hr>
-<div>
-  <br>
 
-<?php include 'search_results.php' ?>
-</div>
+  </div>
+  <hr>
+  <div>
+    <br>
+
+    <?php include 'search_results.php' ?>
+  </div>
 </body>
 
 

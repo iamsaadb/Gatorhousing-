@@ -12,6 +12,8 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
   <link rel="stylesheet" href="css/main.css" />
@@ -22,27 +24,26 @@
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top py-2">
-    <!-- <img src="./img/GatorLogo.PNG" alt="Logo"> -->
     <a class="navbar-brand" href="index.php">
-      <h1>GatorHousing</h1>
+      <img src="./img/logo.png" height="100px" width="150px" alt="Logo">
     </a>
-    <div class="myform" style="margin-left:30px;">
-      <form class="form-inline my-2  d-flex" method="POST" action="filter.php">
+    <div class="myform" style="margin-left:200px;">
+      <form id="search_form" class="form-inline my-2  d-flex" method="POST" action="filter.php">
         <select name="select" class="form-control" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <?php
-          $search=$_POST['search'];
-          $select=$_POST['select'];
+          $search = $_POST['search'];
+          $select = $_POST['select'];
           echo '<h2> SEARCH RESULTS</h2>';
           ?>
           <option class="dropdown-item" value="All">All</option>
-          <option class="dropdown-item" <?php if ($select == "Apartment") echo 'Selected'; ?> value="Apartment">Apartment</option>
-          <option class="dropdown-item" <?php if ($select == "Condo") echo 'Selected'; ?> value="Condo">Condo</option>
-          <option class="dropdown-item" <?php if ($select == "House") echo 'Selected'; ?> value="House">House</option>
-          <option class="dropdown-item" <?php if ($select == "Studio") echo 'Selected'; ?> value="Studio">Studio</option>
+          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Apartment") echo 'Selected'; ?> value="Apartment">Apartment</option>
+          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Condo") echo 'Selected'; ?> value="Condo">Condo</option>
+          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "House") echo 'Selected'; ?> value="House">House</option>
+          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Studio") echo 'Selected'; ?> value="Studio">Studio</option>
         </select>
 
-        <input class="form-control" name ="search" type="search" placeholder="Search" value= "<?php echo $search; ?>" aria-label="Search" style="margin:5px; width:200px;">
-        <button class="btn btn-outline-success" name= "submit" type="submit" style="color:white">Search</button>
+        <input class="form-control" name="search" type="search" placeholder="Search" value="<?php echo $search; ?>" aria-label="Search" style="margin:5px; width:200px;">
+        <button class="ui inverted violet button d-flex" name="submit" type="submit" style="color:white">Search</button>
       </form>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +53,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
 
       <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
+        <li class="nav-item active">
           <a class="ui inverted violet button d-flex" href="about.php">
             <i class=""></i>
             About
@@ -79,13 +80,6 @@
     </div>
 
   </nav>
-
-
-
-
-
-
-
 
   <!-- Modal -->
 
@@ -214,9 +208,12 @@
   </div>
 
   <!-- body -->
-  <br>
-  <h5 style="text-align: -webkit-center; color: #007bff; font-size: 2.00rem; font-family: -webkit-body;">Find your new home, Gators!</h5><br>
   
+  <div class="bg-primary text-center py-5 mb-4" >
+  <div class="container">
+    <h1 class="font-weight-light text-white">Find your new home, Gators!</h1>
+  </div>
+</div>
   <!-- display of the recent 6 posts  -->
   <?php include "recent_posts.php" ?>
 
@@ -224,11 +221,11 @@
 
 
 
-<!-- end body -->
-<!-- footer -->
-<!-- connect -->
-<!-- -->
-<!-- footer-end -->
+  <!-- end body -->
+  <!-- footer -->
+  <!-- connect -->
+  <!-- -->
+  <!-- footer-end -->
 
 </body>
 
@@ -273,4 +270,5 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </footer>
+
 </html>
