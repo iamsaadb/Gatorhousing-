@@ -207,10 +207,9 @@
   <h5 name="filter" style="width: fit-content; margin-top: 1%;
      margin-left: 45%;"><u>Filter by: </u></h5>
 
-  <div name="filter" style="width: fit-content; margin-top: 1%;
+<div name="filter" style="width: fit-content; margin-top: 1%;
      margin-left: 30%;">
     <form id="filter_form" class="form-inline ml-3" method="POST" action="filtered_results.php">
-
       <div class="d-inline">
         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Price</label>
         <select name="price_range" class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
@@ -224,43 +223,27 @@
           <option <?php if ($price_range == "Between $2000 and $3000") echo 'Selected'; ?> value="Between $2000 and $3000">Between $2000 and $3000</option>
           <option <?php if ($price_range == "Between $3000 and $4000") echo 'Selected'; ?> value="Between $3000 and $4000"> Between $3000 and $4000</option>
           <option <?php if ($price_range == "More than $4000") echo 'Selected'; ?> value="More than $4000"> More than $4000</option>
+</select>
+</div>
+<div class="d-inline">
+<label class="my-1 mr-2" for="inlineFormCustomSelectPref">Distance to SFSU</label>
+        <select name="distance" class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
+          <?php
+          $distance = $_POST['distance'];
+          echo '<h2> SEARCH RESULTS</h2>';
+          ?>
+          <option <?php if ($distance == "Any") echo 'Selected'; ?> value="Any">Any</option>
+          <option <?php if ($distance == "Less than 1 mi.") echo 'Selected'; ?> value="Less than 1 mi.">Less than 1 mi.</option>
+          <option <?php if ($distance == "Less than 2 mi.") echo 'Selected'; ?> value="Less than 2 mi.">Less than 2 mi.</option>
+          <option <?php if ($distance == "Less than 3 mi.") echo 'Selected'; ?> value="Less than 3 mi.">Less than 3 mi.</option>
+          <option <?php if ($distance == "More than 3 mi.") echo 'Selected'; ?> value="More than 3 mi.">More than 3 mi.</option>
         </select>
-        <button type="submit" name="submit_filter" class="btn btn-primary my-1 mx-auto">Submit</button>
-
-      </div>
-    </form>
-
-    <!-- <div class="d-inline">
-                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Bed</label>
-                  <select class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
-                  <option value="0">Any</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-              </div>
-          
-            <div class="d-inline">
-                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Bath</label>
-            <select class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
-            <option value="0">Any</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-            </div>
-            <div class="d-inline">
-                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Distance to SFSU</label>
-                  <select class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
-                    <option value="0">Any</option>
-                    <option value="1">Less than 1 mi</option>
-                    <option value="2">Between 1 mi and 3 mi</option>
-                    <option value="3">Between 3 mi and 5 mi</option>
-                    <option value="5">More than 5 mi</option>
-                  </select> -->
-
-  </div>
+</div>
+<div class="d-inline"><br>&nbsp;&nbsp;
+<button type="submit" name="submit_filter" class="btn btn-primary my-1 mx-auto">Update</button>
+</div>
+</form>
+</div>
   <hr>
   <div>
     <br>
@@ -319,3 +302,64 @@
 </footer>
 
 </html>
+
+
+
+
+
+
+<!-- 
+<h5 name="filter" style="width: fit-content; margin-top: 1%;
+     margin-left: 45%;"><u>FILTERS</u></h5>
+
+ <div name="filter" style="width: fit-content; margin-top: 1%;
+     margin-left: 30%;">
+       <form class="form-inline ml-3">
+              <div class="d-inline">
+                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Price</label>
+                  <select class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
+                    <option value="0">Any</option>
+                    <option value="1">Less than $1000</option>
+                    <option value="2">Between $1000 and $2000</option>
+                    <option value="3">Between $2000 and $3000</option>
+                    <option value="4">Between $3000 and $4000</option>
+                    <option value="5">More than $4000</option>
+                  </select>
+              </div>
+                        
+              <div class="d-inline">
+                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Bed</label>
+                  <select class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
+                  <option value="0">Any</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+              </div>
+          
+            <div class="d-inline">
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Bath</label>
+            <select class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
+            <option value="0">Any</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            </div>
+            <div class="d-inline">
+                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Distance to SFSU</label>
+                  <select class="custom-select my-1 mr-sm-2 text-center" id="inlineFormCustomSelectPref">
+                    <option value="0">Any</option>
+                    <option value="1">Less than 1 mi</option>
+                    <option value="2">Between 1 mi and 3 mi</option>
+                    <option value="3">Between 3 mi and 5 mi</option>
+                    <option value="5">More than 5 mi</option>
+                  </select>
+                  <button type="submit" name ="filterSubmit" class="btn btn-primary my-1 mx-auto">Submit</button>
+
+              </div>
+          </form>
+</div> 
+<hr>
+<div> -->
