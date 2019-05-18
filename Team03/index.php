@@ -1,6 +1,6 @@
 <!-- Database connection-->
 <?php include 'server.php' ?>
-<?php session_start() ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +41,8 @@
           <option class="dropdown-item" <?php if ($GLOBALS['select'] == "House") echo 'Selected'; ?> value="House">House</option>
           <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Studio") echo 'Selected'; ?> value="Studio">Studio</option>
         </select>
-
-        <input class="form-control" name="search" type="search" placeholder="Search" value="<?php echo $search; ?>" aria-label="Search" style="margin:5px; width:200px;">
+        <!-- The maxlength='40' should be given as property in input tag of search for all the pages having search -->
+        <input class="form-control" name="search" maxlength='40' type="search" placeholder="Search" value="<?php echo $search; ?>" aria-label="Search" style="margin:5px; width:200px;">
         <button class="ui inverted violet button d-flex" name="submit" type="submit" style="color:white">Search</button>
       </form>
     </div>
@@ -94,14 +94,13 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>
-            <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-            <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-          </p>
-          <p class="divider-text  tex-center">
-            <span class="bg-light">OR</span>
-          </p>
-          <form class="ui form">
+       <center> <a class="navbar-brand">
+      <img src="./img/logo.png" height="50px" width="75px"  alt="Logo">
+        </a> 
+        </center>
+          
+          <h4 class="card-title mt-3 text-center"><b>SIGN IN</b></h4>
+          <form class="ui form" method="POST" action="login.php">
             <div class="field">
               <label>E-Mail Address</label>
               <input type="email" name="email" placeholder="E-Mail Address" />
@@ -110,7 +109,19 @@
               <label>Password</label>
               <input type="password" name="password" placeholder="Enter Password" />
             </div>
-            <button class="ui blue button" type="submit">Sign In</button>
+            <div>
+            <div class="form-group input-group">
+            <div class="field">
+              <label>  You are a : &nbsp; <input type="radio" name="user_type" value="Student" required>&nbsp; Student &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="radio" name="user_type" value="Landlord" required>&nbsp; Landlord</label>
+                     
+                </div>
+                </div>
+            </div>
+            <center>
+            <button name="login" class="ui blue button" type="submit">Sign In</button>
+            <button class="ui blue button" type="reset">Clear</button>
+            </center>
           </form>
         </div>
         <div class="modal-footer">
@@ -123,9 +134,9 @@
   </div>
 
 
-  <!-- sign up modal  -->
+ <!-- sign up modal  -->
 
-  <div class="modal fade " id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade " id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -135,68 +146,57 @@
           </button>
         </div>
         <div class="modal-body">
+        <center> <a class="navbar-brand">
+      <img src="./img/logo.png" height="50px" width="75px"  alt="Logo">
+        </a> 
+         </center>
           <div class="card bg-light">
+        
             <article class="card-body mx-auto" style="max-width: 400px;">
-              <h4 class="card-title mt-3 text-center">Create Account</h4>
-              <p class="text-center">Get started with your free account</p>
-              <p>
-                <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-                <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-              </p>
-              <p class="divider-text  tex-center">
-                <span class="bg-light">OR</span>
-              </p>
-              <form>
+              <h4 class="card-title mt-3 text-center"><b>SIGN UP</b></h4>
+
+              <form method="post" action="registration.php">
+
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                   </div>
-                  <input name="" class="form-control" placeholder="Full name" type="text">
+                  <input name="fname" class="form-control" placeholder="First Name" type="text"  required>
+                </div>
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                  </div>
+                  <input name="lname" class="form-control" placeholder="Last Name" type="text"  required>
                 </div>
 
+                <div class="form-group input-group">
+                      <input type="radio" name="user_type" value="Student" required>&nbsp; Student &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="radio" name="user_type" value="Landlord" required>&nbsp; Landlord
+                </div>
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                   </div>
-                  <input name="" class="form-control" placeholder="Email address" type="email">
+                  <input name="email" class="form-control" placeholder="Email address" type="email"  required>
                 </div>
+
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                   </div>
-                  <select class="custom-select" style="max-width: 120px;">
-                    <option selected="">+1</option>
-                    <option value="1">+972</option>
-                    <option value="2">+198</option>
-                    <option value="3">+701</option>
-                  </select>
-                  <input name="" class="form-control" placeholder="Phone number" type="text">
-                </div>
-                <div class="form-group input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-                  </div>
-                  <select class="form-control">
-                    <option selected=""> Sign up as</option>
-                    <option>Home owner</option>
-                    <option>Manager</option>
-                    <option>Renter</option>
-                  </select>
+                  <input name="password1" class="form-control" placeholder="Create password" type="password" required>
                 </div>
                 <div class="form-group input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                   </div>
-                  <input class="form-control" placeholder="Create password" type="password">
-                </div>
-                <div class="form-group input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                  </div>
-                  <input class="form-control" placeholder="Repeat password" type="password">
+                  <input name="password2" class="form-control" placeholder="Repeat password" type="password" required>
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                  <button name="register" type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                  <button name="reset" type="reset" class="btn btn-primary btn-block"> Clear </button>
+
                 </div>
                 <p class="text-center">Have an account? <a href="" data-toggle="modal" data-target="#exampleModal" data-dismiss="modal" aria-label="Close">Log In</a> </p>
               </form>
@@ -206,7 +206,6 @@
       </div>
     </div>
   </div>
-
   <!-- body -->
   
   <div class="bg-primary text-center py-5 mb-4" >
@@ -216,10 +215,6 @@
 </div>
   <!-- display of the recent 6 posts  -->
   <?php include "recent_posts.php" ?>
-
-
-
-
 
   <!-- end body -->
   <!-- footer -->

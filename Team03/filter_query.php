@@ -1,6 +1,7 @@
 <?php
         include ('server.php');
          $sql = "NULL";
+         $flag = "";
         //  $price_filter_query = "NULL";
         //  $bed_filter_query = "NULL";
         //  $bath_filter_query = "NULL";
@@ -9,7 +10,6 @@
         $price_range = $_POST['price_range'];
         $distance = $_POST['distance'];
         $sql = "SELECT * FROM property";
-
             if (isset($submit_filter)) {
                 if (isset($price_range) && !empty($price_range)){
                     if ($price_range == "Less than $1000"){
@@ -30,47 +30,50 @@
                 elseif ($price_range == "Any"){
                     $sql = "SELECT * FROM property";
                 }
-
-            
+            }
             if (isset($distance) && !empty($distance)){
                 if ($distance == "Less than 1 mi."){
-                    if ( $sql = "SELECT * FROM property"){
-                     $sql .=" WHERE `distance` <= 1.00";
+                    if ( $sql != "SELECT * FROM property"){
+                        $sql .=" AND `distance` <= 1.00;";
                     } else {
-                        $sql .=" AND `distance` <= 1.00";
+                        $sql .=" WHERE `distance` <= 1.00";
+                        
                     }
                 }
             elseif ($distance == "Less than 2 mi."){
-                if ( $sql = "SELECT * FROM property"){
-                 $sql .=" WHERE `distance` <= 2.00";
+                if ( $sql != "SELECT * FROM property"){
+                    $sql .=" AND `distance` <= 2.00;";
+                
                 } else {
-                    $sql .=" AND `distance` <= 2.00";
+                    $sql .=" WHERE `distance` <= 2.00";
                 }
             }
             elseif ($distance == "Less than 3 mi."){
-                if ( $sql = "SELECT * FROM property"){
-                 $sql .=" WHERE `distance` <= 3.00";
+                if ( $sql != "SELECT * FROM property"){
+                    $sql .=" AND `distance` <= 3.00;";
                 } else {
-                    $sql .=" AND `distance` <= 3.00";
+              
+                    $sql .=" WHERE `distance` <= 3.00";
                 }
             }
             elseif($distance == "More than 3 mi."){
-                if ( $sql = "SELECT * FROM property"){
-                 $sql .=" WHERE `distance` >= 1.00";
-                } else {
+                if ( $sql != "SELECT * FROM property"){
                     $sql .=" AND `distance` >= 1.00";
+                } else {
+                    $sql .=" WHERE `distance` >= 1.00";
+
                 }
             }
             elseif($distance == "Any"){
                 if ($sql == "SELECT * FROM property")  { 
                        $sql.=";";}
                else {
-                $sql .= " AND `distance` < 10.00";
+                $sql .= ";";
                }
+        }
+        }
+        echo $flag;
 
-            }
-        }
-        }
         }
             // if (empty($search) && $select == "All") {
  
