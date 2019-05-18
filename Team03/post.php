@@ -148,6 +148,10 @@ session_start();
               <button type="submit" name="submit" style='float:right; margin-bottom:5%'>
                 Submit
               </button>
+              <button type="reset" name="submit" style='float:right; margin-bottom:5%;margin-right:2%;'>
+                Clear
+              </button>
+
 
             </div>
 
