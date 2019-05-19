@@ -1,5 +1,6 @@
 <!-- Database connection-->
 <?php include 'server.php' ?>
+<?php session_start(); ?>
 
 
 <!DOCTYPE html>
@@ -27,6 +28,13 @@
     <a class="navbar-brand" href="index.php">
       <img src="./img/logo.png" height="100px" width="150px" alt="Logo">
     </a>
+    <?php
+         if(isset($_SESSION['fname']) && !empty($_SESSION['fname']))
+               {
+              echo'  <a class="navbar-brand"><div class="text-center" style="color:white;">Hello, ' .$_SESSION['fname'].' </div> </a> ';
+              }
+           ;
+    ?>
     <div class="myform" style="margin-left:200px;">
       <form id="search_form" class="form-inline my-2  d-flex" method="POST" action="filter.php">
         <select name="select" class="form-control" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -54,14 +62,21 @@
 
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="ui inverted violet button d-flex" href="about.php">
+          <a class="ui inverted violet button d-flex" href="dashboard.php">
             <i class=""></i>
+            Dashboard
+          </a>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="ui inverted violet button d-flex" href="about.php">
+            <i class="fa fa-sticky-note-o"></i>
             About
           </a>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="ui inverted violet button d-flex" href="#">
+          <a class="ui inverted violet button d-flex" href="post.php">
             <i class="fa fa-sticky-note-o"></i>
             Post
           </a>
@@ -69,15 +84,41 @@
         </li>
 
 
+
       </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class=" ui inverted purple button d-flex" href="registration.html" data-toggle="modal" data-target="#exampleModal">
-            <i class="add user icon"></i>
-            Sign In</a>
-        </li>
-      </ul>
-    </div>
+
+      <?php
+    if(isset($_SESSION['email']) && !empty($_SESSION['email']))
+               {
+              echo'        <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class=" ui inverted purple button d-flex" href="logout.php">
+                  
+                  LOG OUT</a>
+              </li>
+            </ul>
+          </div>
+       ';
+              }
+              else {
+                echo'        <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class=" ui inverted purple button d-flex" href="registration.html" data-toggle="modal" data-target="#exampleModal">
+                  <i class="add user icon"></i>
+                  SIGN IN</a>
+              </li>
+            </ul>
+          </div>
+       ';
+
+              }
+              
+           ;
+?>
+
+
+
+
 
   </nav>
 
@@ -98,7 +139,9 @@
       <img src="./img/logo.png" height="50px" width="75px"  alt="Logo">
         </a> 
         </center>
-          
+
+         
+     
           <h4 class="card-title mt-3 text-center"><b>SIGN IN</b></h4>
           <form class="ui form" method="POST" action="login.php">
             <div class="field">
@@ -150,6 +193,8 @@
       <img src="./img/logo.png" height="50px" width="75px"  alt="Logo">
         </a> 
          </center>
+
+       
           <div class="card bg-light">
         
             <article class="card-body mx-auto" style="max-width: 400px;">
@@ -212,6 +257,7 @@
   <div class="container">
     <h1 class="font-weight-light text-white">Find your new home, Gators!</h1>
   </div>
+ 
 </div>
   <!-- display of the recent 6 posts  -->
   <?php include "recent_posts.php" ?>
