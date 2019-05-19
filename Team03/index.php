@@ -31,7 +31,7 @@
     <?php
          if(isset($_SESSION['fname']) && !empty($_SESSION['fname']))
                {
-              echo'  <a class="navbar-brand"><div class="text-center" style="color:white;">Hello, ' .$_SESSION['fname'].' '.  $_SESSION['user_id']. '</div> </a> ';
+              echo'  <a class="navbar-brand"><div class="text-center" style="color:white;">Hello, ' .$_SESSION['fname']. '</div> </a> ';
               }
            ;
     ?>
@@ -274,7 +274,9 @@
      
     <?php 
       if(isset($_SESSION['email']) && !empty($_SESSION['email'] )) {
-           if($_SESSION['type']=="Landlord"){echo 'Rent Your Property @ GatorHousing!';}}
+           if($_SESSION['type']=="Landlord"){echo 'Rent Your Property @ GatorHousing!';}
+           else{echo ' Find Your Home, <b>GATORS!</b>';}           
+          }
                 else{echo ' Find Your Home, <b>GATORS!</b>';}  
          
     ?>

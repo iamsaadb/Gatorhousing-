@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
               session_start();
               while ($row = $run->fetch_assoc()) {
               $_SESSION['type']= "Student";
-              $_SESSION['id']= $row['sid'];
+              $_SESSION['user_id']= $row['sid'];
               $_SESSION['email']= $row['email'];
               $_SESSION['fname'] = $row['fname'];
               $_SESSION['lname'] = $row['lname'];
