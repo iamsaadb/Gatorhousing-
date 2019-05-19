@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
-// session_start();
-// include 'registration.php';
-// include 'login.php';
+session_start();
+include 'registration.php';
+include 'login.php';
  ?>
 <html lang="en">
   <head>
@@ -68,10 +68,7 @@
               font-weight: bolder;
 
             }
-
         </style>
-
-
   </head>
   <body>
     <!-- Navigation -->
@@ -327,55 +324,50 @@
     -->
 
     <script type="text/javascript">
-      document.getElementById("newPropertyButton").onclick = function() {
+        document.getElementById("newPropertyButton").onclick = function() {
 
-        location.href='post.php';
-      }
+          location.href='post.php';
+        }
 
       function addWord() {
-  document.getElementById("text").innerHTML = document.getElementById("text").innerHTML + "word";
+      document.getElementById("text").innerHTML = document.getElementById("text").innerHTML + "word";
       }
-
-
-
     </script>
 
-   </div>
+  </div>
 
 
 
   <!-- end body -->
   <!-- footer -->
-  <!-- connect -->
-  <footer>
+     <footer>
       <div class ="container-fluid padding">
-      <div class="row text-center">
-        <div class="col-md-4">
-          <hr class = "light">
-          <h5>Contact Information</h5>
-          <hr class="light">
-          <p>email@gmail.com</p>
-          <p>Ph: XXX-XXXX</p>
-        </div>
-        <div class="col-md-4">
-          <hr class="light">
-          <h5>Our Office Hours</h5>
-          <hr class="light">
-          <p>Monday-Friday </p>
-          <p>9am - 5pm</p>
-
-        </div>
-        <div class="col-md-4">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <hr class = "light">
+            <h5>Contact Information</h5>
+            <hr class="light">
+            <p>email@gmail.com</p>
+            <p>Ph: XXX-XXXX</p>
+          </div>
+          <div class="col-md-4">
+            <hr class="light">
+            <h5>Our Office Hours</h5>
+            <hr class="light">
+            <p>Monday-Friday </p>
+            <p>9am - 5pm</p>
+          </div>
+          <div class="col-md-4">
             <hr class="light">
             <h5>Our Office Address</h5>
             <hr class="light">
             <p>1200 ABC Street</p>
             <p>San Francisco, CA</p>
           </div>
-        <div class="col-12">
-          <hr class="light">
+          <div class="col-12">
+            <hr class="light">
+          </div>
         </div>
-      </div>
       </div>
     </footer>
     <!-- footer-end -->

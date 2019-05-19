@@ -1,5 +1,5 @@
 <?php 
-include ('server.php');
+//include ('server.php');
 ?>
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
@@ -9,7 +9,7 @@ include ('server.php');
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 <!-- Header -->
-
+<title>About Team Members</title>
 <!-- Nav Bar -->
 <header>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top py-2">
@@ -84,44 +84,78 @@ include ('server.php');
     <!-- Team Member 1 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <img src="./images/person_1.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+          <h5 class="card-title mb-0">Dhwan Shah</h5>
+          <div class="card-text text-black-50">Team Lead / Full Stack Developer</div>
         </div>
       </div>
     </div>
+    
     <!-- Team Member 2 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
+        <img src="./images/Saad2.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+          <h5 class="card-title mb-0">Saad Bouayad</h5>
+          <div class="card-text text-black-50" style='width:max-content'> Backend Lead / Full Stack Developer</div>
         </div>
       </div>
     </div>
     <!-- Team Member 3 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
+        <img src="./images/person_2.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+          <h5 class="card-title mb-0">Mubarak Akinbola</h5>
+          <div class="card-text text-black-50"> Backend Developer </div>
         </div>
       </div>
     </div>
     <!-- Team Member 4 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" class="card-img-top" alt="...">
+        <img src="./images/Rajvi.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+          <h5 class="card-title mb-0">Rajvi Shah</h5>
+          <div class="card-text text-black-50">Full Stack Developer</div>
         </div>
       </div>
     </div>
   </div>
+  <div class='row2' style='display : -webkit-inline-box; display:flex; justify-content:center;'><!-- Team Member 5 -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="./images/download.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Dawit Ayele</h5>
+            <div class="card-text text-black-50">Frontend Lead / Web Developer</div>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 6 -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="./images/Rachel_dummy.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Aye Win Sandy</h5>
+            <div class="card-text text-black-50">Frontend Developer</div>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 7 -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="./images/person_4.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0"> Ahmad Rangeen </h5>
+            <div class="card-text text-black-50">GitHub Master / Web Developer</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+  
   <!-- /.row -->
 
 </div>
