@@ -31,7 +31,7 @@
     <?php
          if(isset($_SESSION['fname']) && !empty($_SESSION['fname']))
                {
-              echo'  <a class="navbar-brand"><div class="text-center" style="color:white;">Hello, ' .$_SESSION['fname'].' </div> </a> ';
+              echo'  <a class="navbar-brand"><div class="text-center" style="color:white;">Hello, ' .$_SESSION['fname'].' '.  $_SESSION['user_id']. '</div> </a> ';
               }
            ;
     ?>
@@ -61,13 +61,22 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
 
       <ul class="navbar-nav ml-auto">
+<?php 
+      if(isset($_SESSION['email']) && !empty($_SESSION['email'] )) {
+        echo'
         <li class="nav-item active">
-          <a class="ui inverted violet button d-flex" href="dashboard.php">
+          <a class="ui inverted violet button d-flex" ';
+           if($_SESSION['type']=="Landlord"){echo ' href="landlord_dashboard.php"';}
+                elseif($_SESSION['type']=="Student"){echo ' href="student_dashboard.php"';}  
+                echo'
+          >
             <i class=""></i>
             Dashboard
           </a>
           </a>
         </li>
+      
+      
         <li class="nav-item active">
           <a class="ui inverted violet button d-flex" href="about.php">
             <i class="fa fa-sticky-note-o"></i>
@@ -75,17 +84,23 @@
           </a>
           </a>
         </li>
-        <li class="nav-item active">
+      ';}?>
+<?php 
+      if(isset($_SESSION['email']) && !empty($_SESSION['email'] )) {
+        if($_SESSION['type']=="Landlord"){
+          echo'        
+          <li class="nav-item active">
           <a class="ui inverted violet button d-flex" href="post.php">
             <i class="fa fa-sticky-note-o"></i>
             Post
           </a>
           </a>
-        </li>
+        </li>';
+        }
+      }
+      ?>
 
-
-
-      </ul>
+            </ul>
 
       <?php
     if(isset($_SESSION['email']) && !empty($_SESSION['email']))
@@ -255,7 +270,19 @@
   
   <div class="bg-primary text-center py-5 mb-4" >
   <div class="container">
-    <h1 class="font-weight-light text-white">Find your new home, Gators!</h1>
+    <h1 class="font-weight-light text-white">
+     
+    <?php 
+      if(isset($_SESSION['email']) && !empty($_SESSION['email'] )) {
+           if($_SESSION['type']=="Landlord"){echo 'Rent Your Property @ GatorHousing!';}}
+                else{echo ' Find Your Home, <b>GATORS!</b>';}  
+         
+    ?>
+
+  
+  
+  
+  </h1>
   </div>
  
 </div>

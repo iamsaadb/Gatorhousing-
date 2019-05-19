@@ -27,13 +27,13 @@ if(isset($_POST['login'])){
                 }
         
       } else if ($user_type == "Landlord"){
-        $sql = "SELECT * FROM student WHERE email= '$email' AND password = '$password'";
+        $sql = "SELECT * FROM landlord WHERE email= '$email' AND password = '$password'";
         $run= mysqli_query($conn,$sql);
         if(mysqli_num_rows($run) > 0){
           session_start();
           while ($row = $run->fetch_assoc()) {
           $_SESSION['type']= "Landlord";
-          $_SESSION['id']= $row['lid'];
+          $_SESSION['user_id']= $row['lid'];
           $_SESSION['email']= $row['email'];
           $_SESSION['fname'] = $row['fname'];
           $_SESSION['lname'] = $row['lname'];
