@@ -50,12 +50,21 @@
     </style>
   </head>
   <body>
-    <div class="jumbotron">
-      <h1 class="display-4" id="jumbo">Landlord Messages</h1>
-
-      <hr class="my-4" />
-
-      <a class="btn btn-primary btn-lg" id="viewMessages" href="#" role="button">View messsges</a>
+    <!-- Navigation -->
+  <div class='Navigation_Post'>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top py-2">
+    <a class="navbar-brand" href="index.php">
+      <img src="./img/logo.png" height="100px" width="150px" alt="Logo">
+    </a>
+    <h3 style='color: whitesmoke;width: -webkit-fill-available; text-align: -webkit-center'> Landlord Messages </h3>
+    <div class="myform" style="margin-left:200px;">
+     </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </nav>
+    <div class="jumbotron" style='margin-top:13%'>
+      <a class="btn btn-primary btn-lg" id="viewMessages" href="#" role="button">View messages</a>
 
       <a
         class="btn btn-primary btn-lg"

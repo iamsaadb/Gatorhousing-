@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
-session_start();
-include 'registration.php';
-//include 'login.php';
+// session_start();
+// include 'registration.php';
+// include 'login.php';
  ?>
 <html lang="en">
   <head>
