@@ -1,7 +1,12 @@
 <!-- Database connection-->
+<<<<<<< HEAD
 <?php 
 include 'server.php' 
 ?>
+=======
+<?php include 'server.php' ?>
+<?php session_start(); ?>
+>>>>>>> de298a68b594ae8cc2780f9ba73328fbfd907711
 
 
 <!DOCTYPE html>
@@ -29,6 +34,13 @@ include 'server.php'
     <a class="navbar-brand" href="index.php">
       <img src="./img/logo.png" height="100px" width="150px" alt="Logo">
     </a>
+    <?php
+         if(isset($_SESSION['fname']) && !empty($_SESSION['fname']))
+               {
+              echo'  <a class="navbar-brand"><div class="text-center" style="color:white;">Hello, ' .$_SESSION['fname']. '</div> </a> ';
+              }
+           ;
+    ?>
     <div class="myform" style="margin-left:200px;">
       <form id="search_form" class="form-inline my-2  d-flex" method="POST" action="filter.php">
         <select name="select" class="form-control" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,31 +67,79 @@ include 'server.php'
     <div class="collapse navbar-collapse" id="navbarResponsive">
 
       <ul class="navbar-nav ml-auto">
+<?php 
+      if(isset($_SESSION['email']) && !empty($_SESSION['email'] )) {
+        echo'
+        <li class="nav-item active">
+          <a class="ui inverted violet button d-flex" ';
+           if($_SESSION['type']=="Landlord"){echo ' href="landlord_dashboard.php"';}
+                elseif($_SESSION['type']=="Student"){echo ' href="student_dashboard.php"';}  
+                echo'
+          >
+            <i class=""></i>
+            Dashboard
+          </a>
+          </a>
+        </li>
+      
+      
         <li class="nav-item active">
           <a class="ui inverted violet button d-flex" href="about.php">
-            <i class=""></i>
+            <i class="fa fa-sticky-note-o"></i>
             About
           </a>
           </a>
         </li>
-        <li class="nav-item active">
-          <a class="ui inverted violet button d-flex" href="#">
+      ';}?>
+<?php 
+      if(isset($_SESSION['email']) && !empty($_SESSION['email'] )) {
+        if($_SESSION['type']=="Landlord"){
+          echo'        
+          <li class="nav-item active">
+          <a class="ui inverted violet button d-flex" href="post.php">
             <i class="fa fa-sticky-note-o"></i>
             Post
           </a>
           </a>
-        </li>
+        </li>';
+        }
+      }
+      ?>
+
+            </ul>
+
+      <?php
+    if(isset($_SESSION['email']) && !empty($_SESSION['email']))
+               {
+              echo'        <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class=" ui inverted purple button d-flex" href="logout.php">
+                  
+                  LOG OUT</a>
+              </li>
+            </ul>
+          </div>
+       ';
+              }
+              else {
+                echo'        <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class=" ui inverted purple button d-flex" href="registration.html" data-toggle="modal" data-target="#exampleModal">
+                  <i class="add user icon"></i>
+                  SIGN IN</a>
+              </li>
+            </ul>
+          </div>
+       ';
+
+              }
+              
+           ;
+?>
 
 
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class=" ui inverted purple button d-flex" href="registration.html" data-toggle="modal" data-target="#exampleModal">
-            <i class="add user icon"></i>
-            Sign In</a>
-        </li>
-      </ul>
-    </div>
+
+
 
   </nav>
 
@@ -100,7 +160,9 @@ include 'server.php'
       <img src="./img/logo.png" height="50px" width="75px"  alt="Logo">
         </a> 
         </center>
-          
+
+         
+     
           <h4 class="card-title mt-3 text-center"><b>SIGN IN</b></h4>
           <form class="ui form" method="POST" action="login.php">
             <div class="field">
@@ -152,6 +214,8 @@ include 'server.php'
       <img src="./img/logo.png" height="50px" width="75px"  alt="Logo">
         </a> 
          </center>
+
+       
           <div class="card bg-light">
         
             <article class="card-body mx-auto" style="max-width: 400px;">
@@ -212,8 +276,23 @@ include 'server.php'
   
   <div class="bg-primary text-center py-5 mb-4" >
   <div class="container">
-    <h1 class="font-weight-light text-white">Find your new home, Gators!</h1>
+    <h1 class="font-weight-light text-white">
+     
+    <?php 
+      if(isset($_SESSION['email']) && !empty($_SESSION['email'] )) {
+           if($_SESSION['type']=="Landlord"){echo 'Rent Your Property @ GatorHousing!';}
+           else{echo ' Find Your Home, <b>GATORS!</b>';}           
+          }
+                else{echo ' Find Your Home, <b>GATORS!</b>';}  
+         
+    ?>
+
+  
+  
+  
+  </h1>
   </div>
+ 
 </div>
   <!-- display of the recent 6 posts  -->
   <?php include "recent_posts.php" ?>

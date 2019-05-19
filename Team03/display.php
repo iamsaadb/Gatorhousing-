@@ -64,4 +64,3 @@ while(($row = mysqli_fetch_array($result, MYSQLI_ASSOC))){
      echo '</table></center><h1>NO RESULTS TRY AGAIN</h1>';
  }}
 echo '</table></center>';
-?>

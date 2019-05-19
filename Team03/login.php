@@ -9,53 +9,42 @@ if(isset($_POST['login'])){
     $password = md5($password);
 
     if($user_type == "Student"){
-          $query = "SELECT * from student where email = '$email' AND password = '$password'";
-          if($conn->query($query)){
-            $return = mysqli_query($conn,$query);
-            $result = mysqli_num_rows($return);
-
-            $sql = "SELECT sid FROM student WHERE email= '$email' AND password = '$password'";
+            $sql = "SELECT * FROM student WHERE email= '$email' AND password = '$password'";
             $run= mysqli_query($conn,$sql);
-            if(mysqli_num_rows($run) >  0){
-              echo "You're logged in";
-              $_SESSION['email'] = $email;
-              echo "Welcome ". $_SESSION['email'];
-
-              header("Location: studentDashboard.php");
+            if(mysqli_num_rows($run) > 0){
+              session_start();
+              while ($row = $run->fetch_assoc()) {
+              $_SESSION['type']= "Student";
+              $_SESSION['user_id']= $row['sid'];
+              $_SESSION['email']= $row['email'];
+              $_SESSION['fname'] = $row['fname'];
+              $_SESSION['lname'] = $row['lname'];
+            }
+              header("Location: index.php");
                 }
                 else  {
                   echo "something went wrong";
                 }
-        }
+        
       } else if ($user_type == "Landlord"){
-          $query = "SELECT * from landlord where email = '$email' AND password = '$password'";
-          if($conn->query($query)){
-
-            $return = mysqli_query($conn,$query);
-            $result = mysqli_num_rows($return);
-
-            $sql = "SELECT lid FROM landlord WHERE email= '$email' AND password = '$password'";
-            $run= mysqli_query($conn,$sql);
-            echo'test1';
-
-            if(mysqli_num_rows($run) >  0){
-              echo'test2';
-
-              echo "You're logged in";
-              $_SESSION['email'] = $email;
-              echo "Welcome ". $_SESSION['email'];
-
-              header("Location: landlord.php");
-                }
-                else  {
-                  echo'test3';
-
-                  echo "something went wrong";
-                }
-      }
+        $sql = "SELECT * FROM landlord WHERE email= '$email' AND password = '$password'";
+        $run= mysqli_query($conn,$sql);
+        if(mysqli_num_rows($run) > 0){
+          session_start();
+          while ($row = $run->fetch_assoc()) {
+          $_SESSION['type']= "Landlord";
+          $_SESSION['user_id']= $row['lid'];
+          $_SESSION['email']= $row['email'];
+          $_SESSION['fname'] = $row['fname'];
+          $_SESSION['lname'] = $row['lname'];
+        }
+          header("Location: index.php");
+            }
+            else  {
+              echo "something went wrong";
+            }
     }
 }
-
 
 
 
