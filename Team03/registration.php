@@ -30,9 +30,15 @@
                   } else {
                    $sql = "INSERT INTO student (fname, lname, email, password ) VALUES ('$fname', '$lname', '$email', '$password')";
                     if($conn->query($sql)) {
-                      echo "Data successfully entered";
+                      echo '<br><br><br><h3><center><h1>Thank you for sign in up </h1> You will be redirected to the home page in 3 seconds </center><h3> <br>
+                      <meta http-equiv="refresh" content="3;url=/updatedversion/csc648-sp19-team03/Team03/index.php" />
+              
+                      ';
                     }else {
-                      echo "Error1";
+                      echo '<br><br><br><h3><center><h1>ERROR - TRY AGAIN </h1> You will be redirected to the home page in 3 seconds </center><h3> <br>
+                      <meta http-equiv="refresh" content="3;url=/updatedversion/csc648-sp19-team03/Team03/index.php" />
+              
+                      ';
                         }
                     }
               }
@@ -50,10 +56,15 @@
                 }else{
                   $sql = "INSERT INTO landlord (`fname`,`lname`,`email`,`password`) VALUES ('$fname','$lname','$email','$password')";
                   if($conn->query($sql)) {
-                    echo '<center><h1>Data successfully entered</h1><a href="/cleanversion/index.php"> Log In </a></center>';
-
+                    echo '<br><br><br><h3><center><h1>Thank you for sign in up </h1> You will be redirected to the home page in 3 seconds </center><h3> <br>
+                      <meta http-equiv="refresh" content="3;url=/updatedversion/csc648-sp19-team03/Team03/index.php" />
+              
+                      ';
                   }else{
-                    echo "Error2";
+                    echo '<br><br><br><h3><center><h1>ERROR - TRY AGAIN </h1> You will be redirected to the home page in 3 seconds </center><h3> <br>
+                      <meta http-equiv="refresh" content="3;url=/updatedversion/csc648-sp19-team03/Team03/index.php" />
+              
+                      ';
                       }
                     }
                   }
