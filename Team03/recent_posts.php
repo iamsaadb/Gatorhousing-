@@ -14,7 +14,9 @@
         echo '<br>
             <center><table style="width:80%">
             <tr class="mix"> <td style="width:200px;"> <div class="card" style="width:260px">
+            <a href="detail.php">
             <img width="257px" height = "200px" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Card image cap">
+            </a>
             </div> 
              <div class="card-body" style="width:260px">
                <div class="list"> <i class = "fa fa-map-marker"></i> <b> Address : </b> ' . $row["address"] . ' </div>
@@ -40,9 +42,12 @@
            echo'  </div></td>';
       } elseif ($counter % 3 == 2) {
         echo '
-            <td style="width:200px;"> <div class="card" style="width:260px">
+            <td style="width:200px;">
+             <div class="card" style="width:260px">
+            <a href="detail.php">
             <img width="257px" height = "200px" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Card image cap">
-            </div> 
+            </a>           
+             </div> 
              <div class="card-body" style="width:260px">
                <div class="list"> <i class = "fa fa-map-marker"></i> <b> Address : </b> ' . $row["address"] . ' </div>
                <div class="list"><i class="fas fa-dollar-sign"></i> <b> Price: </b> ' . $row["price"] . ' </div> <br>
@@ -69,8 +74,10 @@
       } else if ($counter % 3 == 0) {
         echo '
             <td style="width:200px;"> <div class="card" style="width:260px">
+            <a href="detail.php">
             <img width="257px" height = "200px" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Card image cap">
-            </div> 
+            </a>
+                        </div> 
              <div class="card-body" style="width:260px">
                <div class="list"> <i class = "fa fa-map-marker"></i><b> Address : </b> ' . $row["address"] . ' </div>
                <div class="list"><i class="fas fa-dollar-sign"></i> <b> Price: </b> ' . $row["price"] . ' </div> <br>

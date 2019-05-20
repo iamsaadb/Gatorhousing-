@@ -1,8 +1,4 @@
-  <!-- Database connection-->
-<?php include 'server.php' ?>
-<?php session_start(); ?>
-
-
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,68 +14,8 @@
 
 
   <link rel="stylesheet" href="css/main.css" />
-  <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-
-    <link rel="stylesheet" href="css/main.css" />
-
-    <title><?php echo $_SESSION["fname"]. " 's Dashboard - GATORHOUSING" ; ?></title>
-
-        <style type="text/css">
-
-            #middleSection {
-                width: 100%;
-                height: 60%;
-            }
-
-            #newPropertyButton {
-              height: 10%;
-              font-weight: bold;
-              font-size: 20px;
-              margin-left: 5%;
-              margin-top: 5%;
-            }
-
-            #navb {
-              height: 75px;
-              margin-bottom: 75px;
-
-            }
-
-            #landlordName {
-              margin-right: 180px;
-              font-weight: bolder;
-              text-decoration: underline;
-            }
-
-
-
-            #messages {
-              margin-right: 180px;
-              font-size: 20px;
-              font-weight: bolder;
-
-            }
-
-            #editAccount {
-              font-size: 20px;
-              font-weight: bolder;
-
-            }
-
-        </style>
-
+  <title>GatorHousing - Home Page</title>
 </head>
 
 <body>
@@ -197,120 +133,132 @@
 
   </nav>
 
-  <body>
-  
-  <!-- bodyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy -->
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navb">
-    <h1 id="landlordName"><?php echo $_SESSION["fname"]. " ". $_SESSION["lname"] ; ?></h1>
+  <!-- Modal -->
 
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="landlord_messages.php" id="messages">Messages </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ProfilePage_Dhwan.html" id="editAccount">Edit Account</a>
-        </li>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+       <center> <a class="navbar-brand">
+      <img src="./img/logo.png" height="50px" width="75px"  alt="Logo">
+        </a> 
+        </center>
 
-      </ul>
-
-    </div>
-  </nav>
-
-
-  <?php include('property_display.php'); ?>
+         
+     
+          <h4 class="card-title mt-3 text-center"><b>SIGN IN</b></h4>
+          <form class="ui form" method="POST" action="login.php">
+            <div class="field">
+              <label>E-Mail Address</label>
+              <input type="email" name="email" placeholder="E-Mail Address" />
             </div>
-
-
-  <div id="middleSection">
-
-
-
-    <button id = "newPropertyButton">Add Post   <img src="plusSign.png" width="15%"></button>
-
-
-    <!--
-    <input type=button onClick="location.href='landlordPost.html'" value='click here'>
-    -->
-
-    <script type="text/javascript">
-      document.getElementById("newPropertyButton").onclick = function() {
-
-        location.href='post.php';
-      }
-
-      function addWord() {
-  document.getElementById("text").innerHTML = document.getElementById("text").innerHTML + "word";
-      }
-
-
-
-    </script>
-
-   </div>
-
-
-
-  <!-- end body -->
-  <!-- footer -->
-  <!-- connect -->
-  <footer>
-      <div class ="container-fluid padding">
-      <div class="row text-center">
-        <div class="col-md-4">
-          <hr class = "light">
-          <h5>Contact Information</h5>
-          <hr class="light">
-          <p>email@gmail.com</p>
-          <p>Ph: XXX-XXXX</p>
+            <div class="field">
+              <label>Password</label>
+              <input type="password" name="password" placeholder="Enter Password" />
+            </div>
+            <div>
+            <div class="form-group input-group">
+            <div class="field">
+              <label>  You are a : &nbsp; <input type="radio" name="user_type" value="Student" required>&nbsp; Student &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="radio" name="user_type" value="Landlord" required>&nbsp; Landlord</label>
+                     
+                </div>
+                </div>
+            </div>
+            <center>
+            <button name="login" class="ui blue button" type="submit">Sign In</button>
+            <button class="ui blue button" type="reset">Clear</button>
+            </center>
+          </form>
         </div>
-        <div class="col-md-4">
-          <hr class="light">
-          <h5>Our Office Hours</h5>
-          <hr class="light">
-          <p>Monday-Friday </p>
-          <p>9am - 5pm</p>
-
+        <div class="modal-footer">
+          Don't Have an Account ?
+          </button>
+          <a href="#" data-toggle="modal" data-target="#exampleModal2" data-dismiss="modal" aria-label="Close">Sign Up</a>
         </div>
-        <div class="col-md-4">
-            <hr class="light">
-            <h5>Our Office Address</h5>
-            <hr class="light">
-            <p>1200 ABC Street</p>
-            <p>San Francisco, CA</p>
+      </div>
+    </div>
+  </div>
+
+
+ <!-- sign up modal  -->
+
+ <div class="modal fade " id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <center> <a class="navbar-brand">
+      <img src="./img/logo.png" height="50px" width="75px"  alt="Logo">
+        </a> 
+         </center>
+
+       
+          <div class="card bg-light">
+        
+            <article class="card-body mx-auto" style="max-width: 400px;">
+              <h4 class="card-title mt-3 text-center"><b>SIGN UP</b></h4>
+
+              <form method="post" action="registration.php">
+
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                  </div>
+                  <input name="fname" class="form-control" placeholder="First Name" type="text"  required>
+                </div>
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                  </div>
+                  <input name="lname" class="form-control" placeholder="Last Name" type="text"  required>
+                </div>
+
+                <div class="form-group input-group">
+                      <input type="radio" name="user_type" value="Student" required>&nbsp; Student &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="radio" name="user_type" value="Landlord" required>&nbsp; Landlord
+                </div>
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                  </div>
+                  <input name="email" class="form-control" placeholder="Email address" type="email"  required>
+                </div>
+
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                  </div>
+                  <input name="password1" class="form-control" placeholder="Create password" type="password" required>
+                </div>
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                  </div>
+                  <input name="password2" class="form-control" placeholder="Repeat password" type="password" required>
+                </div>
+                <div class="form-group">
+                  <button name="register" type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                  <button name="reset" type="reset" class="btn btn-primary btn-block"> Clear </button>
+
+                </div>
+                <p class="text-center">Have an account? <a href="" data-toggle="modal" data-target="#exampleModal" data-dismiss="modal" aria-label="Close">Log In</a> </p>
+              </form>
+            </article>
           </div>
-        <div class="col-12">
-          <hr class="light">
         </div>
       </div>
-      </div>
-    </footer>
-    <!-- footer-end -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+    </div>
+  </div>
