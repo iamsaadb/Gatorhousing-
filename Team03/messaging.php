@@ -1,3 +1,4 @@
+<!-- Database connection-->
 <?php
 include ('server.php');
 session_start();
@@ -62,7 +63,6 @@ $_SESSION['owner']=$_POST["owner"];
     </style>
   </head>
   <body>
-
     <div class="jumbotron">
      <center> <h1 class="display-4" id="jumbo">Message <?php 
 echo $_POST['owner'];

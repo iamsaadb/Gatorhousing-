@@ -1,12 +1,6 @@
 <!-- Database connection-->
-<<<<<<< HEAD
-<?php 
-include 'server.php' 
-?>
-=======
 <?php include 'server.php' ?>
 <?php session_start(); ?>
->>>>>>> de298a68b594ae8cc2780f9ba73328fbfd907711
 
 
 <!DOCTYPE html>

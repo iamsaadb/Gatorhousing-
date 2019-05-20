@@ -1,5 +1,5 @@
   <!-- Database connection-->
-<?php include 'server.php' ?>
+  <?php include 'server.php' ?>
 <?php session_start(); ?>
 
 
@@ -212,7 +212,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="landlord_messages.php" id="messages">Messages </a>
+          <a class="nav-link" href="landlord_messages.php" id="messages" style="color:yellow; background-color:purple">Messages </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="ProfilePage_Dhwan.html" id="editAccount">Edit Account</a>
@@ -223,83 +223,22 @@
     </div>
   </nav>
 
+  <body>
+  <br>
+  <div>
+  <?php include('messages_display.php'); ?>
+            </div>
 
-  <table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Date Posted</th>
-        <th scope="col">Status</th>
-        <th scope="col">Manage</th>
-      </tr>
-    </thead>
-
-    </table>
-
-  <div id="middleSection">
-
-
-
-    <button id = "newPropertyButton">Add Post   <img src="plusSign.png" width="15%"></button>
-
-
-    <!--
-    <input type=button onClick="location.href='landlordPost.html'" value='click here'>
-    -->
-
-    <script type="text/javascript">
-      document.getElementById("newPropertyButton").onclick = function() {
-
-        location.href='post.php';
-      }
-
-      function addWord() {
-  document.getElementById("text").innerHTML = document.getElementById("text").innerHTML + "word";
-      }
-
-
-
+    
+  </body>
+  <script type="text/javascript">
+      document.getElementById("viewMessages").onclick = function() {
+        document.getElementById("messageList").style.display = "block";
+      };
     </script>
 
-   </div>
-
-
-
-  <!-- end body -->
-  <!-- footer -->
-  <!-- connect -->
-  <footer>
-      <div class ="container-fluid padding">
-      <div class="row text-center">
-        <div class="col-md-4">
-          <hr class = "light">
-          <h5>Contact Information</h5>
-          <hr class="light">
-          <p>email@gmail.com</p>
-          <p>Ph: XXX-XXXX</p>
-        </div>
-        <div class="col-md-4">
-          <hr class="light">
-          <h5>Our Office Hours</h5>
-          <hr class="light">
-          <p>Monday-Friday </p>
-          <p>9am - 5pm</p>
-
-        </div>
-        <div class="col-md-4">
-            <hr class="light">
-            <h5>Our Office Address</h5>
-            <hr class="light">
-            <p>1200 ABC Street</p>
-            <p>San Francisco, CA</p>
-          </div>
-        <div class="col-12">
-          <hr class="light">
-        </div>
-      </div>
-      </div>
-    </footer>
-    <!-- footer-end -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -315,10 +254,4 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"
-    ></script>
-  </body>
 </html>

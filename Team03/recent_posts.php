@@ -10,6 +10,7 @@
     while ($row = $result->fetch_assoc()) {
       $counter++;
       if ($counter % 3 == 1) {
+        
         echo '<br>
             <center><table style="width:80%">
             <tr class="mix"> <td style="width:200px;"> <div class="card" style="width:260px">
@@ -19,7 +20,6 @@
                <div class="list"> <i class = "fa fa-map-marker"></i> <b> Address : </b> ' . $row["address"] . ' </div>
                <div class="list"><i class="fas fa-dollar-sign"></i> <b> Price: </b> ' . $row["price"] . ' </div> <br>
                <div class="list"> <i class = "fa fa-road"></i> <b> Distance to SFSU : ' . $row["distance"] . '  </b></div>  <br>
-               <div class="list"> <i class = "fa fa-road"></i> <b> Owner : ' . $row["owner"] . '  </b></div>  <br>
 
                ';
 
@@ -48,12 +48,19 @@
                <div class="list"><i class="fas fa-dollar-sign"></i> <b> Price: </b> ' . $row["price"] . ' </div> <br>
                <div class="list"> <i class = "fa fa-road"></i> <b> Distance to SFSU : ' . $row["distance"] . '  </b></div>  <br>
 
-
                ';
 
-               if(isset($_SESSION['email']))
+               if(isset($_SESSION['email']) && !empty($_SESSION['email']))
                {
-              echo'  <div class="text-center"><a href="messaging.php"/> <button type="button" class="btn btn-primary  btn-md">Contact Landlord</button></div> ';
+                 $value=$row["owner"];
+              echo'  
+              <div class="text-center"><a href="messaging.php"/>
+              <form method="POST" action="messaging.php">
+              <button type="submit" name="owner" value="'.$value.'" class="btn btn-primary  btn-md">
+              Contact Landlord
+              </button>
+              </form>
+              </div> ';
               }
               
            ;
