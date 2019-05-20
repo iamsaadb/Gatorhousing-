@@ -1,8 +1,9 @@
+  <!-- Database connection-->
+  <?php include 'server.php' ?>
+<?php session_start(); ?>
+
+
 <!DOCTYPE html>
-<?php
-session_start();
-include 'registration.php';
- ?>
 <html lang="en">
 
 <head>
@@ -12,36 +13,105 @@ include 'registration.php';
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
   <link rel="stylesheet" href="css/main.css" />
+  <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-  <title>Gator Housing</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title><?php echo $_SESSION["fname"]. " 's Dashboard - GATORHOUSING" ; ?></title>
+
+        <style type="text/css">
+
+            #middleSection {
+                width: 100%;
+                height: 60%;
+            }
+
+            #newPropertyButton {
+              height: 10%;
+              font-weight: bold;
+              font-size: 20px;
+              margin-left: 5%;
+              margin-top: 5%;
+            }
+
+            #navb {
+              height: 75px;
+              margin-bottom: 75px;
+
+            }
+
+            #landlordName {
+              margin-right: 180px;
+              font-weight: bolder;
+              text-decoration: underline;
+            }
+
+
+
+            #messages {
+              margin-right: 180px;
+              font-size: 20px;
+              font-weight: bolder;
+
+            }
+
+            #editAccount {
+              font-size: 20px;
+              font-weight: bolder;
+
+            }
+
+        </style>
+
 </head>
 
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top py-2">
-
-    <a class="navbar-brand" href="#">
-      <h1>Gator-Housing</h1>
+    <a class="navbar-brand" href="index.php">
+      <img src="./img/logo.png" height="100px" width="150px" alt="Logo">
     </a>
-    <div class="myform">
-      <form class="form-inline my-2  d-flex">
-        <div class="nav-item dropdown updated">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            All
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+    <?php
+         if(isset($_SESSION['fname']) && !empty($_SESSION['fname']))
+               {
+              echo'  <a class="navbar-brand"><div class="text-center" style="color:white;">Hello, ' .$_SESSION['fname']. '</div> </a> ';
+              }
+           ;
+    ?>
+    <div class="myform" style="margin-left:200px;">
+      <form id="search_form" class="form-inline my-2  d-flex" method="POST" action="filter.php">
+        <select name="select" class="form-control" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?php
+          $search = $_POST['search'];
+          $select = $_POST['select'];
+          echo '<h2> SEARCH RESULTS</h2>';
+          ?>
+          <option class="dropdown-item" value="All">All</option>
+          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Apartment") echo 'Selected'; ?> value="Apartment">Apartment</option>
+          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Condo") echo 'Selected'; ?> value="Condo">Condo</option>
+          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "House") echo 'Selected'; ?> value="House">House</option>
+          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Studio") echo 'Selected'; ?> value="Studio">Studio</option>
+        </select>
+        <!-- The maxlength='40' should be given as property in input tag of search for all the pages having search -->
+        <input class="form-control" name="search" maxlength='40' type="search" placeholder="Search" value="<?php echo $search; ?>" aria-label="Search" style="margin:5px; width:200px;">
+        <button class="ui inverted violet button d-flex" name="submit" type="submit" style="color:white">Search</button>
       </form>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,110 +121,137 @@ include 'registration.php';
     <div class="collapse navbar-collapse" id="navbarResponsive">
 
       <ul class="navbar-nav ml-auto">
-
-        <li class="nav-item">
-          <!-- <a class=" ui inverted purple button d-flex" href="logout.php" data-toggle="modal" data-target="#exampleModal">
-
-            Sign out</a> -->
-            <a class=" ui inverted purple button d-flex"  href="logout.php"> <button type="button" name="logout"> Logout</button></a>
+<?php 
+      if(isset($_SESSION['email']) && !empty($_SESSION['email'] )) {
+        echo'
+        <li class="nav-item active">
+          <a class="ui inverted violet button d-flex" ';
+           if($_SESSION['type']=="Landlord"){echo ' href="landlord_dashboard.php"';}
+                elseif($_SESSION['type']=="Student"){echo ' href="student_dashboard.php"';}  
+                echo'
+          >
+            <i class=""></i>
+            Dashboard
+          </a>
+          </a>
         </li>
-      </ul>
-    </div>
+      
+      
+        <li class="nav-item active">
+          <a class="ui inverted violet button d-flex" href="about.php">
+            <i class="fa fa-sticky-note-o"></i>
+            About
+          </a>
+          </a>
+        </li>
+      ';}?>
+<?php 
+      if(isset($_SESSION['email']) && !empty($_SESSION['email'] )) {
+        if($_SESSION['type']=="Landlord"){
+          echo'        
+          <li class="nav-item active">
+          <a class="ui inverted violet button d-flex" href="post.php">
+            <i class="fa fa-sticky-note-o"></i>
+            Post
+          </a>
+          </a>
+        </li>';
+        }
+      }
+      ?>
+
+            </ul>
+
+      <?php
+    if(isset($_SESSION['email']) && !empty($_SESSION['email']))
+               {
+              echo'        <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class=" ui inverted purple button d-flex" href="logout.php">
+                  
+                  LOG OUT</a>
+              </li>
+            </ul>
+          </div>
+       ';
+              }
+              else {
+                echo'        <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class=" ui inverted purple button d-flex" href="registration.html" data-toggle="modal" data-target="#exampleModal">
+                  <i class="add user icon"></i>
+                  SIGN IN</a>
+              </li>
+            </ul>
+          </div>
+       ';
+
+              }
+              
+           ;
+?>
+
+
+
+
 
   </nav>
 
-  <!-- Sign In-->
+  <body>
+  
+  <!-- bodyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navb">
+    <h1 id="landlordName"><?php echo $_SESSION["fname"]. " ". $_SESSION["lname"] ; ?></h1>
 
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!-- sign up modal  -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="landlord_messages.php" id="messages" style="color:yellow; background-color:purple">Messages </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ProfilePage_Dhwan.html" id="editAccount">Edit Account</a>
+        </li>
 
-  <!-- body -->
-
-<div>
-  <h1> Welcome Student Name </h1>
-</div>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="img/about.jpg" alt="First slide">
+      </ul>
 
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/bg_1.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/bg_2.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+  </nav>
 
-  <!-- footer -->
-  <!-- connect -->
-  <div class="container-fluid padding">
-    <div class="row text-center padding">
-      <div class="col-12">
-        <h2>Connect</h2>
-      </div>
-      <div class="col-12 social padding">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </div>
+  <body>
+  <br>
+  <div>
+  <?php include('messages_display.php'); ?>
+            </div>
 
-  <footer>
-    <div class="container-fluid padding">
-      <div class="row text-center">
-        <div class="col-md-4">
-          <hr class="light">
-          <p>5555-555</p>
-          <p>email@gmail.com</p>
-          <p>1200 Holway strat</p>
-          <p>San Francsco, Ca</p>
-        </div>
-        <div class="col-md-4">
-          <hr class="light">
-          <h5>Our hours</h5>
-          <hr class="light">
-          <p>Monday: 9am - 5pm</p>
-          <p>Satarday: closed</p>
+    
+  </body>
+  <script type="text/javascript">
+      document.getElementById("viewMessages").onclick = function() {
+        document.getElementById("messageList").style.display = "block";
+      };
+    </script>
 
-        </div>
-        <div class="col-md-4">
-          <hr class="light">
-          <h5>Our hours</h5>
-          <hr class="light">
-          <p>Monday: 9am - 5pm</p>
-          <p>Satarday: closed</p>
-
-        </div>
-        <div class="col-12">
-          <hr class="light">
-          <h5>&comp: W3oajfooasj@jdosajo</h5>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- footer-end -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-</body>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 </html>

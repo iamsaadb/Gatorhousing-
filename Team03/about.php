@@ -1,91 +1,32 @@
 <?php
 include('server.php');
+session_start();
+include ('navbar.php');
 ?>
-
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 <!-- Header -->
 <title>About Team Members</title>
 <!-- Nav Bar -->
-<header>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top py-2">
-    <a class="navbar-brand" href="index.php">
-      <img src="./img/logo.png" height="100px" width="150px" alt="Logo">
-    </a>
-    <div class="myform" style="margin-left:200px;">
-      <form id="search_form" class="form-inline my-2  d-flex" method="POST" action="filter.php">
-        <select name="select" class="form-control" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?php
-          $search = $_POST['search'];
-          $select = $_POST['select'];
-          echo '<h2> SEARCH RESULTS</h2>';
-          ?>
-          <option class="dropdown-item" value="All">All</option>
-          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Apartment") echo 'Selected'; ?> value="Apartment">Apartment</option>
-          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Condo") echo 'Selected'; ?> value="Condo">Condo</option>
-          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "House") echo 'Selected'; ?> value="House">House</option>
-          <option class="dropdown-item" <?php if ($GLOBALS['select'] == "Studio") echo 'Selected'; ?> value="Studio">Studio</option>
-        </select>
 
-        <input class="form-control" name="search" type="search" placeholder="Search" value="<?php echo $search; ?>" aria-label="Search" style="margin:5px; width:200px;">
-        <button class="ui inverted violet button d-flex" name="submit" type="submit" style="color:white">Search</button>
-      </form>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="ui inverted violet button d-flex" href="about.php">
-            <i class=""></i>
-            About
-          </a>
-          </a>
-        </li>
-        <li class="nav-item active">
-          <a class="ui inverted violet button d-flex" href="#">
-            <i class="fa fa-sticky-note-o"></i>
-            Post
-          </a>
-          </a>
-        </li>
-
-
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class=" ui inverted purple button d-flex" href="registration.html" data-toggle="modal" data-target="#exampleModal">
-            <i class="add user icon"></i>
-            Sign In</a>
-        </li>
-      </ul>
-    </div>
-
-  </nav>
-</header>
-<!-- Header -->
 
 <body>
 
 <!-- Page Content -->
-<div class="container">
-<div class="bg-primary text-center py-5 mb-4" style ="margin-top:100px">
-<div class="container">
-    <h1 class="font-weight-light text-white">Meet Our Team</h1>
+
+<div class="bg-primary text-center py-5 mb-4" >
+  <div class="container">
+    <h1 class="font-weight-light text-white">MEET <img src="./img/logo.png" height="90px" width="125px" alt="Logo"> TEAM </h1>
+
+</h1>
   </div>
+
 </div>
+<div class="container">
   <div class="row">
     <!-- Team Member 1 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="./images/person_1.jpg" class="card-img-top" alt="...">
+        <img src="./images/dhwan_photo.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Dhwan Shah</h5>
           <div class="card-text text-black-50">Team Lead / Full Stack Developer</div>
@@ -106,7 +47,7 @@ include('server.php');
     <!-- Team Member 3 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="./images/person_2.jpg" class="card-img-top" alt="...">
+        <img src="./images/mubarak_photo.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Mubarak Akinbola</h5>
           <div class="card-text text-black-50"> Backend Developer </div>
@@ -116,7 +57,7 @@ include('server.php');
     <!-- Team Member 4 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="./images/Rajvi.jpg" class="card-img-top" alt="...">
+        <img src="./images/rajvi_photo.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Rajvi Shah</h5>
           <div class="card-text text-black-50">Full Stack Developer</div>
@@ -127,7 +68,7 @@ include('server.php');
   <div class='row2' style='display : -webkit-inline-box; display:flex; justify-content:center;'><!-- Team Member 5 -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-0 shadow">
-          <img src="./images/download.jpg" class="card-img-top" alt="...">
+          <img src="./images/dawit_photo.jpg" class="card-img-top" alt="...">
           <div class="card-body text-center">
             <h5 class="card-title mb-0">Dawit Ayele</h5>
             <div class="card-text text-black-50">Frontend Lead / Web Developer</div>
@@ -137,7 +78,7 @@ include('server.php');
       <!-- Team Member 6 -->
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-0 shadow">
-          <img src="./images/Rachel_dummy.jpg" class="card-img-top" alt="...">
+          <img src="./images/rachel_photo.jpg" class="card-img-top" alt="...">
           <div class="card-body text-center">
             <h5 class="card-title mb-0">Aye Win Sandy</h5>
             <div class="card-text text-black-50">Frontend Developer</div>
@@ -147,7 +88,7 @@ include('server.php');
       <!-- Team Member 7 -->
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-0 shadow">
-          <img src="./images/person_4.jpg" class="card-img-top" alt="...">
+          <img src="./images/ahmad_photo.jpg" class="card-img-top" alt="...">
           <div class="card-body text-center">
             <h5 class="card-title mb-0"> Ahmad Rangeen </h5>
             <div class="card-text text-black-50">GitHub Master / Web Developer</div>
@@ -160,6 +101,49 @@ include('server.php');
   <!-- /.row -->
 
   </div>
-
 </body>
-<!-- /.container -->
+  <br><br>
+
+<footer style="font-size:70%;">
+  <div class="container-fluid padding">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Contact Information</h5>
+        <hr class="light">
+        <p>support@gatorhousing.com</p>
+        <p>Phone: (209)-280-9932</p>
+      </div>
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Our Office Hours</h5>
+        <hr class="light">
+        <p>Monday-Friday </p>
+        <p>9am - 5pm</p>
+
+      </div>
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Our Office Address</h5>
+        <hr class="light">
+        <p>GH, 1600 Holloway Ave</p>
+        <p>San Francisco, CA 94117</p>
+      </div>
+      <div class="col-12">
+        <hr class="light">
+      </div>
+    </div>
+
+  </div>
+
+  <a href="admin.php" style="margin-left:99%; color:white" ><b>?</b></a> 
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</footer>
+
+</html>

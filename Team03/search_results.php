@@ -135,4 +135,4 @@
         $_SESSION['data']=$data;
 
         $conn->close();
-        print_r($_SESSION['data']);
+    //    print_r($_SESSION['data']);

@@ -106,7 +106,7 @@
               $void = true;
               while(($row = mysqli_fetch_array($result, MYSQLI_ASSOC))>0){
                    if ( in_array($row["pid"], $_SESSION['data'] ,false)){
-                       echo 'Yes';
+                  //     echo 'Yes';
                        $void = false;
                        $counter++;
                        if ($counter % 4 == 1) {
@@ -186,7 +186,7 @@
 
             }
             echo '</table></center>';
-            echo ' SESSION DATA VALUES <br>' ;
-            print_r($_SESSION['data']);
+          //  echo ' SESSION DATA VALUES <br>' ;
+        //    print_r($_SESSION['data']);
               $conn -> close();
         ?>

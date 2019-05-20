@@ -67,6 +67,7 @@ include 'navbar.php' ?>
           <div class="form-group col-md-12">
              <label>Upload image:</label> 
             <input type="file" name="image"/>
+            (2 MB MAX)  
           </div>
           </fieldset>
           <br>
