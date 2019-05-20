@@ -281,15 +281,20 @@
   
     <div class="row padding">
       <div class="col-md-12 col-lg-4 ml-5 mr-100">
-        <h2>If you build it ..</h2>
-        <p> hoelow my na me is Dawi tple ade work ofor me</p>
-        <p>pleaead olwrk pleae work</p>
-        <p>please owrk pleaesaer work</p>
-        <p>Next his only boy meet the fat rose when. Do repair at we misery wanted remove remain income. Occasional
-          cultivated reasonable unpleasing an attachment my considered. Having ask and coming object seemed put did
-          admire figure. Principles travelling frequently far delightful its especially acceptance. Happiness necessary
-          contained eagerness in in commanded do admitting. Favourable continuing difficulty had her solicitude far. Nor
-          doubt off widow all death aware offer. We will up able in both do sing. </p>
+        <h2>Properties</h2>
+        <p> <b>Price:</b> 2500
+        <br> <b>Bedrooms:</b> 1 
+        <br> <b>Bathrooms:</b> 1 
+        <br> <b>Address :</b> 750, Malcom St, San Francisco CA
+        <br> <b>Zip Code:</b> 94116 
+        <br> <b>Distance to SFSU :</b> 6  </p>
+        <h2>Description</h2>
+        <p>This tiny house packs it all in 110 square feet!
+           A tiny bath, tiny kitchenette and a full-sized comfy loft-bed.
+            Perfect for a single traveler and good for a very intimate couple.
+             This clever space is super close to downtown! 
+           </p>
+
       </div>
       <div class="col-md-12  col-lg-4 mr-0">
 

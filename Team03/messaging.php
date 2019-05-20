@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
       <div>
 
         <?php
-        echo $_SESSION['owner'];
+        echo"Type your message here";
 
 
         ?>

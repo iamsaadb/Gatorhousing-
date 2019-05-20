@@ -74,10 +74,23 @@
                      <div class="list"><i class="fas fa-bath"></i> <b> Bathrooms: </b> ' . $row["nBath"] . ' </div> 
                      <div class="list"> <i class = "fa fa-map-marker"></i> <b> Address : </b> ' . $row["address"] . ' </div>   
                      <div class="list"> <i class = "fa fa-road"></i> <b> Distance to SFSU : ' . $row["distance"] . '  </b></div>  <br>
+                     ';
 
-                      <br>
-                      <div class="text-center"><button type="button" class="btn btn-primary  btn-md">Contact Landlord</button></div> 
-                     </div><br></td> ';
+                     if(isset($_SESSION['email']) && !empty($_SESSION['email']))
+                     {
+                       $value=$row["owner"];
+                    echo'  
+                    <div class="text-center"><a href="messaging.php"/>
+                    <form method="POST" action="messaging.php">
+                    <button type="submit" name="owner" value="'.$value.'" class="btn btn-primary  btn-md">
+                    Contact Landlord
+                    </button>
+                    </form>
+                    </div> ';
+                    }
+                    
+                 ;
+                 echo'  </div></td>';
               } elseif ($counter % 4 == 2) {
                 echo '
                     <td style="width:200px;"> <div class="card" style="width:260px">
@@ -90,10 +103,23 @@
                      <div class="list"><i class="fas fa-bath"></i> <b> Bathrooms: </b> ' . $row["nBath"] . ' </div> 
                      <div class="list"> <i class = "fa fa-map-marker"></i> <b> Address : </b> ' . $row["address"] . ' </div>    
                      <div class="list"> <i class = "fa fa-road"></i> <b> Distance to SFSU : ' . $row["distance"] . '  </b></div>  <br>                          
-                        
-                      <br>
-                      <div class="text-center"><button type="button" class="btn btn-primary  btn-md">Contact Landlord</button></div> 
-                     </div><br></td>';
+                      ';
+
+                      if(isset($_SESSION['email']) && !empty($_SESSION['email']))
+                      {
+                        $value=$row["owner"];
+                     echo'  
+                     <div class="text-center"><a href="messaging.php"/>
+                     <form method="POST" action="messaging.php">
+                     <button type="submit" name="owner" value="'.$value.'" class="btn btn-primary  btn-md">
+                     Contact Landlord
+                     </button>
+                     </form>
+                     </div> ';
+                     }
+                     
+                  ;
+                  echo'  </div></td>';
               } elseif ($counter % 4 == 3) {
                 echo '
                     <td style="width:200px;"> <div class="card" style="width:260px">
@@ -106,10 +132,23 @@
                      <div class="list"><i class="fas fa-bath"></i> <b> Bathrooms: </b> ' . $row["nBath"] . ' </div> 
                      <div class="list"> <i class = "fa fa-map-marker"></i> <b> Address : </b> ' . $row["address"] . ' </div>       
                      <div class="list"> <i class = "fa fa-road"></i> <b> Distance to SFSU : ' . $row["distance"] . '  </b></div>  <br>
+                     ';
 
-                      <br>
-                      <div class="text-center"><button type="button" class="btn btn-primary  btn-md">Contact Landlord</button></div> 
-                     </div><br></td>';
+                     if(isset($_SESSION['email']) && !empty($_SESSION['email']))
+                     {
+                       $value=$row["owner"];
+                    echo'  
+                    <div class="text-center"><a href="messaging.php"/>
+                    <form method="POST" action="messaging.php">
+                    <button type="submit" name="owner" value="'.$value.'" class="btn btn-primary  btn-md">
+                    Contact Landlord
+                    </button>
+                    </form>
+                    </div> ';
+                    }
+                    
+                 ;
+                 echo'  </div></td>';
               }
               elseif ($counter % 4 == 0) {
                 echo '
@@ -123,10 +162,23 @@
                      <div class="list"><i class="fas fa-bath"></i> <b> Bathrooms: </b> ' . $row["nBath"] . ' </div> 
                      <div class="list"> <i class = "fa fa-map-marker"></i> <b> Address : </b> ' . $row["address"] . ' </div>
                      <div class="list"> <i class = "fa fa-road"></i> <b> Distance to SFSU : ' . $row["distance"] . '  </b></div>  <br>
+                     ';
 
-                      <br>
-                      <div class="text-center"><button type="button" class="btn btn-primary  btn-md">Contact Landlord</button></div> 
-                      <br></div></td></tr>';
+                     if(isset($_SESSION['email']) && !empty($_SESSION['email']))
+                     {
+                       $value=$row["owner"];
+                    echo'  
+                    <div class="text-center"><a href="messaging.php"/>
+                    <form method="POST" action="messaging.php">
+                    <button type="submit" name="owner" value="'.$value.'" class="btn btn-primary  btn-md">
+                    Contact Landlord
+                    </button>
+                    </form>
+                    </div> ';
+                    }
+                    
+                 ;
+                 echo'  </div></td>';
               }
              else {
                 echo '</table></center><h1>NO RESULTS TRY AGAIN</h1>';
